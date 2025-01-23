@@ -8,9 +8,11 @@ import {useNavigation} from "@react-navigation/native";
 import styles from "./StylesLogin";
 import FormInput from "../../componentes/FormInput";
 import {BotonPersonalizado} from "../../componentes/BotonPersonalizado";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+import {RootStackParamalist} from "../../../../App";
 
 const Login = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
     return (
         <ImageBackground
             source={require("../../../../assets/background.png")}

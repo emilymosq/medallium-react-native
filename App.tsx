@@ -4,9 +4,13 @@ import Login from "./app/presentacion/views/auths/Login";
 import Registro from "./app/presentacion/views/auths/Registro";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-const Stack=createNativeStackNavigator();
 
+const Stack=createNativeStackNavigator<RootStackParamalist>();
+export type RootStackParamalist={
+    Login: undefined,
+    Registro: undefined,
 
+}
 
 export default function App() {
   return (

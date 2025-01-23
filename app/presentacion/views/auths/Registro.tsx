@@ -2,12 +2,13 @@ import {Image, ImageBackground, Text, TextInput, TouchableOpacity, View} from "r
 import styles from "./StylesRegistro";
 import FormInput from "../../componentes/FormInput";
 import {BotonPersonalizado} from "../../componentes/BotonPersonalizado";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {createNativeStackNavigator, NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {useNavigation} from "@react-navigation/native";
+import {RootStackParamalist} from "../../../../App";
 
 
 function RegistroScreen(){
-    const navigation = useNavigation();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
     return(
         <ImageBackground source={require("../../../../assets/background.png")}
         style={styles.image}>
