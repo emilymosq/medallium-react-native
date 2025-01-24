@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         textAlign: "center",
         marginBottom:20,
+        fontFamily: 'Poppins'
     },
     subrayado: {
         textDecorationLine: 'underline',
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         alignItems: "center",
         width: "100%",
-        paddingHorizontal: 40
+        paddingHorizontal: 30
     },
 
 
