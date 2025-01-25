@@ -3,12 +3,15 @@ import {Text, TouchableOpacity, StyleSheet} from "react-native";
 import {AppColors} from "../themes/AppTheme";
 
 interface Props{
+    onPress: () => void,
     text: string
 }
 
-export const BotonPersonalizado = ({text}: Props) => {
+export const BotonPersonalizado = ({text, onPress}: Props) => {
     return (
-        <TouchableOpacity style={styles.boton}>
+        <TouchableOpacity
+            onPress={() => onPress()}
+            style={styles.boton}>
             <Text>{text}</Text>
         </TouchableOpacity>
     )

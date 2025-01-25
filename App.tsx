@@ -1,15 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from "./app/presentacion/views/auths/Login";
 import Registro from "./app/presentacion/views/auths/Registro";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import Home from "./app/presentacion/views/home/Home";
 
 const Stack=createNativeStackNavigator<RootStackParamalist>();
 export type RootStackParamalist={
     Login: undefined,
     Registro: undefined,
-
+    Home: undefined,
 }
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
           <Stack.Navigator screenOptions={{headerShown:false}}>
               <Stack.Screen name={"Login"} component={Login} ></Stack.Screen>
               <Stack.Screen name={"Registro"} component={Registro} ></Stack.Screen>
-
+              <Stack.Screen name={"Home"} component={Home} options={{headerShown: true}}></Stack.Screen>
           </Stack.Navigator>
       </NavigationContainer>
   );

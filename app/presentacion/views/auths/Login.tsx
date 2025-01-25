@@ -35,7 +35,9 @@ const Login = () => {
                         keyboardType="default"
                         secureTextEntry={true}
                     ></FormInput>
-                    <BotonPersonalizado text={"INICIAR SESIÓN"}/>
+                    <BotonPersonalizado text={"INICIAR SESIÓN"} onPress={()=>{
+                        navigation.navigate("Home");
+                    }}/>
                     <View style={styles.containerFooter}>
                         <Text>¿No tienes cuenta?</Text>
                         <Text onPress={()=>{

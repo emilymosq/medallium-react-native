@@ -14,5 +14,10 @@ export const AppColors = {
     tribuEscurridizo: "#00C5D4",
     tribuMalefico: "#3F4478",
     tribuEnma: "#8C39BB",
-    tribuHagure: "#06399C"
+    tribuHagure: "#06399C",
+    botonTribus: "#DF89BA",
+    botonElementos: "#6ABE4E",
+    botonRango: "#8B87C0",
+    botonFase: "#28BBEE"
 }
+

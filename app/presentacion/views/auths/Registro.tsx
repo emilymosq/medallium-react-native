@@ -61,7 +61,8 @@ function RegistroScreen(){
                         keyboardType="default"
                         secureTextEntry={true}
                     ></FormInput>
-                    <BotonPersonalizado text={"CREAR CUENTA"}/>
+                    <BotonPersonalizado text={"CREAR CUENTA"} onPress={()=>{
+                        navigation.navigate("Home")}}/>
                     <View style={styles.containerFooter}>
                         <Text>¿Ya tienes cuenta?</Text>
                         <Text onPress={()=>{
