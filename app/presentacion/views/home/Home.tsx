@@ -2,13 +2,18 @@ import React from "react";
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
 import stylesHome from "./StylesHome";
 import styles from "./StylesHome";
+import {useNavigation} from "@react-navigation/native";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+import {RootStackParamalist} from "../../../../App";
+
 
 function Home () {
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
     return (
         <View style={styles.container}>
             <View style={styles.navbar}>
                 <View style={styles.navbarNombre}>
-                    <Image source={require("../../../../assets/logo.png")} style={styles.imagen}></Image>
+                    <Image source={require("../../../../assets/logo.png")} style={styles.imagen} ></Image>
                     <Text style={{
                         fontSize: 20,
                         fontWeight: "bold",
@@ -16,7 +21,11 @@ function Home () {
                         marginLeft: 10,
                     }}>Medallium</Text>
                 </View>
-                <Image source={require("../../../../assets/user.jpg")} style={styles.imagen}></Image>
+                <TouchableOpacity onPress={()=>{
+                    navigation.navigate("Profile");
+                }}>
+                    <Image style={styles.imagen} source={require('../../../../assets/user.jpg')} />
+                </TouchableOpacity>
             </View>
             <View style={styles.containerFilter}>
                 <TextInput style={styles.filter}></TextInput>
