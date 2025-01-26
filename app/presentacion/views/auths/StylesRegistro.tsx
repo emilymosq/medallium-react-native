@@ -66,10 +66,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     containerFooter:{
-        marginTop: 10,
         flexDirection: "row",
-        justifyContent: "center",
-        gap: 5
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        width: "100%",
+        paddingHorizontal: 25
     },
 
 
