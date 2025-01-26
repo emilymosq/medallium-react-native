@@ -44,11 +44,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     containerFooter:{
+        marginTop: 10,
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        width: "100%",
-        paddingHorizontal: 30
+        justifyContent: "center",
+        gap: 5
     },
 
 
