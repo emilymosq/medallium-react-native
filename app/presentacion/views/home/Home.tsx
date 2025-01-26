@@ -1,35 +1,19 @@
-import React, {useState} from "react";
+import React from "react";
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
 import stylesHome from "./StylesHome";
 import styles from "./StylesHome";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamalist} from "../../../../App";
-import NavBar from "../../componentes/NavBar";
 
 
 function Home () {
-
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
-    const [isNavBarVisible, setNavBarVisible] = useState(false);
-
     return (
         <View style={styles.container}>
-            {isNavBarVisible && (
-                <NavBar
-                    onClose={() => setNavBarVisible(false)}
-                    onNavigate={(route) => {
-                        setNavBarVisible(false);
-                    }}
-                />
-            )}
             <View style={styles.navbar}>
                 <View style={styles.navbarNombre}>
-                    <TouchableOpacity onPress={()=>{
-                        setNavBarVisible(true);
-                    }}>
-                        <Image style={styles.imagen} source={require('../../../../assets/menu.png')} />
-                    </TouchableOpacity>
+                    <Image source={require("../../../../assets/logo.png")} style={styles.imagen} ></Image>
                     <Text style={{
                         fontSize: 20,
                         fontWeight: "bold",
