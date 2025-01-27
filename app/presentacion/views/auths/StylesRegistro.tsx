@@ -67,10 +67,8 @@ const styles = StyleSheet.create({
     },
     containerFooter:{
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        width: "100%",
-        paddingHorizontal: 25
+        justifyContent: "center",
+        gap: 5
     },
 
 
