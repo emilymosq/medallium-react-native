@@ -8,6 +8,7 @@ import {RootStackParamalist} from "../../../../App";
 import {CardYoKai} from "../../componentes/CardYoKai";
 import {TextPrincipales} from "../../componentes/TextPrincipales";
 import {SafeAreaProvider} from "react-native-safe-area-context";
+import {Filtro} from "../../componentes/Filtro";
 
 
 function Home () {
@@ -30,9 +31,7 @@ function Home () {
                     <Image style={styles.imagen} source={require('../../../../assets/user.jpg')} />
                 </TouchableOpacity>
             </View>
-            <View style={styles.containerFilter}>
-                <TextInput style={styles.filter}></TextInput>
-            </View>
+            <Filtro/>
             <View style={styles.containerBotones}>
                 <TouchableOpacity style={styles.botonFiltro}>
                     <Text>Tribus</Text>
