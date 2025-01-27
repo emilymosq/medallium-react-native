@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         textAlign: "center",
         marginBottom:20,
-        fontFamily: 'Poppins-Bold'
+        fontFamily: 'Poppins'
     },
     subrayado: {
         textDecorationLine: 'underline',
