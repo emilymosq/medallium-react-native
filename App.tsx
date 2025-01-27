@@ -20,8 +20,8 @@ export default function App() {
           <Stack.Navigator screenOptions={{headerShown:false}}>
               <Stack.Screen name={"Login"} component={Login} ></Stack.Screen>
               <Stack.Screen name={"Registro"} component={Registro} ></Stack.Screen>
-              <Stack.Screen name={"Home"} component={Home} options={{headerShown: true}}></Stack.Screen>
-              <Stack.Screen name={"Profile"} component={Profile} options={{headerShown: true}}></Stack.Screen>
+              <Stack.Screen name={"Home"} component={Home}></Stack.Screen>
+              <Stack.Screen name={"Profile"} component={Profile}></Stack.Screen>
           </Stack.Navigator>
       </NavigationContainer>
   );

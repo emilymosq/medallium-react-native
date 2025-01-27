@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         backgroundColor: AppColors.background,
-        paddingHorizontal: 30
+        paddingHorizontal: 30,
+        paddingTop: 30
     },
     header: {
         flexDirection: "row",

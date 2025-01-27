@@ -4,8 +4,8 @@ import {AppColors} from "../../themes/AppTheme";
 const styles = StyleSheet.create({
     container: {
         backgroundColor: AppColors.background,
-        paddingHorizontal: 30
-
+        paddingHorizontal: 30,
+        paddingTop: 30
     },
     navbar:{
         flexDirection: "row",
@@ -75,59 +75,9 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     containerCardYoKai:{
-        width: "100%"
-    },
-    card: {
         width: "100%",
-        padding: 20,
-        borderRadius: 15,
-        borderWidth: 3.5,
-        borderColor: AppColors.tribuGuapo,
-        backgroundColor: '#fff',
-        position: 'relative',
+        maxHeight: 400
     },
-    textContainer: {
-        alignItems: 'flex-start',
-    },
-    textNombre:{
-        fontWeight: 'bold',
-        fontSize: 18
-    },
-    containerCorazon:{
-        position: "absolute",
-        top: 15,
-        right: 20,
-        padding: 5,
-    },
-    containerImagenYoKai:{
-        alignItems: "flex-end",
-        position: "absolute",
-        top: 20,
-        right: 55,
-    },
-    text: {
-        fontWeight: "condensedBold",
-        fontSize: 26,
-        textAlign: "center",
-        marginVertical:20,
-        fontFamily: 'Poppins'
-    },
-    image: {
-        width: 80,
-        height: 100,
-    },
-    containerIcons: {
-        width: "35%",
-        flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "center",
-        paddingTop: 18
-    },
-    icons: {
-        width: 30,
-        height: 30,
-        resizeMode: "contain",
-    }
 })
 
 export default styles;
