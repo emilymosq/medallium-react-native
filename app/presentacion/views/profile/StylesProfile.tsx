@@ -3,6 +3,8 @@ import {AppColors} from "../../themes/AppTheme";
 
 const styles = StyleSheet.create({
     container: {
+        width: "100%",
+        height: "100%",
         backgroundColor: AppColors.background,
         paddingHorizontal: 30
     },
@@ -43,7 +45,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         width: "100%",
-        height: "15%"
+        height: 100,
+        marginVertical: 10
     },
     dataTitle: {
         textDecorationLine: "underline",
@@ -54,9 +57,10 @@ const styles = StyleSheet.create({
         fontSize: 17
     },
     cerrarSesionContainer: {
+        alignItems: "flex-end",
         position: "absolute",
-        bottom: -130,
-        right: 60,
+        bottom: 30,
+        right: 40
     },
     cerrarSesion: {
         fontSize: 20,
