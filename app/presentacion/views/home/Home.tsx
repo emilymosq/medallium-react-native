@@ -1,10 +1,13 @@
 import React from "react";
-import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Image, ScrollView, Text, TextInput, TouchableOpacity, View} from "react-native";
 import stylesHome from "./StylesHome";
 import styles from "./StylesHome";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamalist} from "../../../../App";
+import {CardYoKai} from "../../componentes/CardYoKai";
+import {TextPrincipales} from "../../componentes/TextPrincipales";
+import {SafeAreaProvider} from "react-native-safe-area-context";
 
 
 function Home () {
@@ -44,33 +47,18 @@ function Home () {
                     <Text>Fase</Text>
                 </TouchableOpacity>
             </View>
-            <View style={styles.containerCardYoKai}>
-                <Text style={styles.text}>Populares</Text>
-                <View style={styles.card}>
-                    <View style={styles.textContainer}>
-                        <Text style={styles.textNombre}>Jibanyan</Text>
-                        <Text style={styles.textNombre}>ジバニャン</Text>
-                    </View>
-                    <View style={styles.containerCorazon}>
-                        <Image source={require("../../../../assets/Heart.png")}></Image>
-                    </View>
-                    <View style={styles.containerImagenYoKai}>
-                        <Image
-                            source={require("../../../../assets/jibanyan.png")}
-                            style={styles.image}
-                        />
-                    </View>
-                    <View style={styles.containerIcons}>
-                        <Image source={require("../../../../assets/guapo.png")}
-                                style={styles.icons}
-                        />
-                        <Image source={require("../../../../assets/fuego.png")}
-                               style={styles.icons}/>
-                        <Image source={require("../../../../assets/rangod.png")}
-                               style={styles.icons}/>
-                    </View>
-                </View>
-            </View>
+            <TextPrincipales text={"Populares"}></TextPrincipales>
+
+            <ScrollView style={styles.containerCardYoKai}>
+                <CardYoKai nombre={"Jibanyan"}
+                          nombreJapones={"ジバニャン"}
+                          iconHeart={require("../../../../assets/Heart.png")}
+                          imagenYoKai={require("../../../../assets/jibanyan.png")}
+                          iconTribu={require("../../../../assets/guapo.png")}
+                          iconElemento={require("../../../../assets/fuego.png")}
+                          iconRango={require("../../../../assets/rangod.png")}>
+                </CardYoKai>
+            </ScrollView>
         </View>
     )
 }

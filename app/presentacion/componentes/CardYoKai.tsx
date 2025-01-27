@@ -5,21 +5,24 @@ import {AppColors} from "../themes/AppTheme";
 
 interface Props{
     nombre: string,
-    icon: any,
-    imagenYoKai: any
+    nombreJapones: string,
+    iconHeart: any,
+    imagenYoKai: any,
+    iconTribu: any,
+    iconElemento: any,
+    iconRango: any
 
 }
 
-export const CardYoKai =  ({nombre, icon, imagenYoKai}: Props) => {
+export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango}: Props) => {
 return(
-    <View style={styles.containerCardYoKai}>
         <View style={styles.card}>
             <View style={styles.textContainer}>
                 <Text style={styles.textNombre}>{nombre}</Text>
-                <Text style={styles.textNombre}>{nombre}</Text>
+                <Text style={styles.textNombre}>{nombreJapones}</Text>
             </View>
             <View style={styles.containerCorazon}>
-                <Image source={icon}></Image>
+                <Image source={iconHeart}></Image>
             </View>
             <View style={styles.containerImagenYoKai}>
                 <Image
@@ -28,57 +31,47 @@ return(
                 />
             </View>
             <View style={styles.containerIcons}>
-                <Image source={icon}
+                <Image source={iconTribu}
                        style={styles.icons}
                 />
-                <Image source={icon}
+                <Image source={iconElemento}
                        style={styles.icons}/>
-                <Image source={icon}
+                <Image source={iconRango}
                        style={styles.icons}/>
             </View>
         </View>
-    </View>
     )
 }
 
 const styles = StyleSheet.create({
-        containerCardYoKai:{
-        width: "100%"
-    },
         card: {
         width: "100%",
-        padding: 20,
+        padding:20,
         borderRadius: 15,
         borderWidth: 3.5,
         borderColor: AppColors.tribuGuapo,
         backgroundColor: '#fff',
         position: 'relative',
-    },
+        marginVertical: 5
+        },
         textContainer: {
         alignItems: 'flex-start',
-    },
+        },
         textNombre:{
         fontWeight: 'bold',
         fontSize: 18
-    },
+        },
         containerCorazon:{
         position: "absolute",
         top: 15,
         right: 20,
         padding: 5,
-    },
+        },
         containerImagenYoKai:{
         alignItems: "flex-end",
         position: "absolute",
         top: 20,
         right: 55,
-    },
-        text: {
-        fontWeight: "condensedBold",
-        fontSize: 26,
-        textAlign: "center",
-        marginVertical:20,
-        fontFamily: 'Poppins'
     },
         image: {
         width: 80,
