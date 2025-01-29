@@ -39,8 +39,6 @@ function Profile() {
                 </TouchableOpacity>
 
             </View>
-
-
         </View>
 
     )
