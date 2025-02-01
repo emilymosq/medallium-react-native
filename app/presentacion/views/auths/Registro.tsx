@@ -5,10 +5,12 @@ import {BotonPersonalizado} from "../../componentes/BotonPersonalizado";
 import {createNativeStackNavigator, NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {useNavigation} from "@react-navigation/native";
 import {RootStackParamalist} from "../../../../App";
-
+import viewModel from "./ViewModel";
 
 function RegistroScreen(){
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    const {email, password, firstName, lastName, onChangeRegister, register, errorMessage, validateForm} = viewModel.RegisterViewModel();
+
     return(
         <ImageBackground source={require("../../../../assets/background.png")}
         style={styles.image}>
@@ -42,27 +44,29 @@ function RegistroScreen(){
                         placeholder={""}
                         keyboardType="default"
                         secureTextEntry={false}
+                        onPressFormInterface={(text) => onChangeRegister('user', text)}
                     ></FormInput>
                     <FormInput
                         text={"Correo electrónico"}
                         placeholder={""}
                         keyboardType="email-address"
                         secureTextEntry={false}
+                        onPressFormInterface={(text) => onChangeRegister('email', text)}
                     ></FormInput>
                     <FormInput
                         text={"Contraseña"}
                         placeholder={""}
                         keyboardType="default"
                         secureTextEntry={true}
+                        onPressFormInterface={(text) => onChangeRegister('password', text)}
                     ></FormInput>
-                    <FormInput
-                        text={"Confirmar contraseña"}
-                        placeholder={""}
-                        keyboardType="default"
-                        secureTextEntry={true}
-                    ></FormInput>
-                    <BotonPersonalizado text={"CREAR CUENTA"} onPress={()=>{
-                        navigation.navigate("Home")}}/>
+                    {/*<BotonPersonalizado text={"CREAR CUENTA"} onPress={()=>{*/}
+                    {/*    navigation.navigate("Home")}}/>*/}
+                    <BotonPersonalizado
+                        onPress={() => {
+                                register()
+                                validateForm()
+                            }} text={"CREAR CUENTA"}/>
                     <View style={styles.containerFooter}>
                         <Text>¿Ya tienes cuenta?</Text>
                         <Text onPress={()=>{

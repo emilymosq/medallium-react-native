@@ -7,10 +7,11 @@ interface Props {
     placeholder: string,
     keyboardType: KeyboardType,
     secureTextEntry: boolean,
-    text: string
+    text: string,
+    onPressFormInterface: (text: string) => void,
 }
 
-const FormInput = ({text, placeholder, keyboardType, secureTextEntry}: Props)=> {
+const FormInput = ({text, placeholder, keyboardType, secureTextEntry, onPressFormInterface}: Props)=> {
     return(
         <View>
             <Text style={styles.textInput}>{text}</Text>
@@ -18,6 +19,7 @@ const FormInput = ({text, placeholder, keyboardType, secureTextEntry}: Props)=> 
                        placeholder={placeholder}
                        keyboardType={keyboardType}
                        secureTextEntry={secureTextEntry}
+                       onChangeText={(text) => onPressFormInterface(text)}
             ></TextInput>
         </View>
     );
