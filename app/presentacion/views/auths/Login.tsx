@@ -28,12 +28,14 @@ const Login = () => {
                         placeholder={""}
                         keyboardType="email-address"
                         secureTextEntry={false}
+                        onPressFormInterface={(text) => (text)}
                     ></FormInput>
                     <FormInput
                         text={"Contraseña"}
                         placeholder={""}
                         keyboardType="default"
                         secureTextEntry={true}
+                        onPressFormInterface={(text) => (text)}
                     ></FormInput>
                     <BotonPersonalizado text={"INICIAR SESIÓN"} onPress={()=>{
                         navigation.navigate("Home");
