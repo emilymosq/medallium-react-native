@@ -1,4 +1,4 @@
-import {Image, ImageBackground, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Image, ImageBackground, Text, TextInput, ToastAndroid, TouchableOpacity, View} from "react-native";
 import styles from "./StylesRegistro";
 import FormInput from "../../componentes/FormInput";
 import {BotonPersonalizado} from "../../componentes/BotonPersonalizado";
@@ -6,11 +6,17 @@ import {createNativeStackNavigator, NativeStackNavigationProp} from "@react-navi
 import {useNavigation} from "@react-navigation/native";
 import {RootStackParamalist} from "../../../../App";
 import viewModel from "./ViewModel";
+import {useEffect} from "react";
 
 function RegistroScreen(){
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
     const {email, password, firstName, lastName, onChangeRegister, register, errorMessage, validateForm} = viewModel.RegisterViewModel();
 
+    useEffect(() => {
+        if (errorMessage != ""){
+            ToastAndroid.show(errorMessage, ToastAndroid.LONG);
+        }
+    }, [errorMessage])
     return(
         <ImageBackground source={require("../../../../assets/background.png")}
         style={styles.image}>
@@ -28,6 +34,7 @@ function RegistroScreen(){
                                 style={styles.inputPersonaizado}
                                 keyboardType={"default"}
                                 secureTextEntry={false}
+                                onPress={(text) => onChangeRegister('firstName', text)}
                             ></TextInput>
                         </View>
                         <View style={styles.nombreApellidoInputContainer}>
@@ -36,6 +43,7 @@ function RegistroScreen(){
                                 style={styles.inputPersonaizado}
                                 keyboardType={"default"}
                                 secureTextEntry={false}
+                                onPress={(text) => onChangeRegister('lastName', text)}
                             ></TextInput>
                         </View>
                     </View>
