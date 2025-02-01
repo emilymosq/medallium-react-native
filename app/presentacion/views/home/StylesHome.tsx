@@ -23,18 +23,6 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
         borderRadius: 50
     },
-    containerFilter:{
-        width: "100%",
-    },
-    filter:{
-        width: "auto",
-        height: 50,
-        borderRadius: 25,
-        backgroundColor: "white",
-        justifyContent: "center",
-        alignItems: "center",
-        marginVertical: 20
-    },
     containerBotones:{
         flexWrap: "wrap",
         flexDirection: "row",

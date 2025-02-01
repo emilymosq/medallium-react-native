@@ -2,6 +2,9 @@ import React from "react";
 import {TextPrincipales} from "./TextPrincipales";
 import {Image, Text, View, StyleSheet} from "react-native";
 import {AppColors} from "../themes/AppTheme";
+import {useNavigation} from "@react-navigation/native";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+import {RootStackParamalist} from "../../../App";
 
 interface Props{
     nombre: string,
@@ -15,7 +18,8 @@ interface Props{
 }
 
 export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango}: Props) => {
-return(
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    return(
         <View style={styles.card}>
             <View style={styles.textContainer}>
                 <Text style={styles.textNombre}>{nombre}</Text>

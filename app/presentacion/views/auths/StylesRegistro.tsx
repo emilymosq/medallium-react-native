@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     containerFooter:{
         flexDirection: "row",
         justifyContent: "center",
+        marginHorizontal: 10,
         gap: 5
     },
 
