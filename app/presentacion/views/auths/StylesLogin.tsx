@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom:20,
         fontFamily: 'Poppins'
-
     },
     subrayado: {
         textDecorationLine: 'underline',
@@ -49,7 +48,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginHorizontal: 10,
         gap: 5
-
     },
 
 
