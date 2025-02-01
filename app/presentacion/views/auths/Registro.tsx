@@ -1,3 +1,4 @@
+import React from "react";
 import {Image, ImageBackground, Text, TextInput, ToastAndroid, TouchableOpacity, View} from "react-native";
 import styles from "./StylesRegistro";
 import FormInput from "../../componentes/FormInput";

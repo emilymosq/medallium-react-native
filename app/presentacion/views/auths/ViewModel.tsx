@@ -59,6 +59,7 @@ const RegisterViewModel = () =>{
     const [values, setValues] = useState({
         firstName: "",
         lastName: "",
+        user: "",
         email:"",
         password: "",
     })
@@ -77,7 +78,11 @@ const RegisterViewModel = () =>{
             return false;
         }
         if (values.lastName === "") {
-            setErrorMessage("Nombre obligatorio")
+            setErrorMessage("Apellido obligatorio")
+            return false;
+        }
+        if (values.user === "") {
+            setErrorMessage("Usuario obligatorio")
             return false;
         }
         if (values.email === "") {
