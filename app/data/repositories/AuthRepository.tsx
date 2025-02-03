@@ -12,7 +12,7 @@ export class AuthRepositoryImpl implements AuthRepository{
             return Promise.resolve(response.data)
         } catch (error){
             let e = (error as AxiosError)
-            console.log("Error :" + JSON.stringify(e.response?.data))
+            console.log("Error hasd:" + JSON.stringify(e.response?.data))
             return Promise.resolve(JSON.parse(JSON.stringify(e.response?.data)) as ApiDeliveryResponse)
         }
     }

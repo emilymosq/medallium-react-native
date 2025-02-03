@@ -11,7 +11,7 @@ import {useEffect} from "react";
 
 function RegistroScreen(){
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
-    const {email, password, firstName, lastName, onChangeRegister, register, errorMessage, validateForm} = viewModel.RegisterViewModel();
+    const {email, password, firstName, lastName, user, onChangeRegister, register, errorMessage, validateForm} = viewModel.RegisterViewModel();
 
     useEffect(() => {
         if (errorMessage != ""){
@@ -35,7 +35,7 @@ function RegistroScreen(){
                                 style={styles.inputPersonaizado}
                                 keyboardType={"default"}
                                 secureTextEntry={false}
-                                onPress={(text) => onChangeRegister('firstName', text)}
+                                onChangeText={(text) => onChangeRegister('firstName', text)}
                             ></TextInput>
                         </View>
                         <View style={styles.nombreApellidoInputContainer}>
@@ -44,7 +44,7 @@ function RegistroScreen(){
                                 style={styles.inputPersonaizado}
                                 keyboardType={"default"}
                                 secureTextEntry={false}
-                                onPress={(text) => onChangeRegister('lastName', text)}
+                                onChangeText={(text) => onChangeRegister('lastName', text)}
                             ></TextInput>
                         </View>
                     </View>

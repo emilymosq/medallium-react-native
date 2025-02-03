@@ -4,6 +4,7 @@ import {LoginAuthUseCase} from "../../../domain/useCases/UserLocal/LoginAuth";
 import {SaveUserUseCase} from "../../../domain/useCases/auth/SaveUser";
 import {UserLogin} from "../../../domain/entities/User";
 import {RegisterAuthUseCase} from "../../../domain/useCases/UserLocal/RegisterAuth";
+import {ApiDelivery} from "../../../data/sources/remote/api/ApiDelivery";
 
 const LoginViewModel = () =>{
     const [errorMessage, setErrorMessage] = useState<string>("");
@@ -68,7 +69,7 @@ const RegisterViewModel = () =>{
     }
     const register = async () => {
         if (validateForm()){
-            const response = await RegisterAuthUseCase(values)
+            const response = await ApiDelivery.post("/users/create", values)
             console.log("RESULT: " + JSON.stringify(response))
         }
     }
