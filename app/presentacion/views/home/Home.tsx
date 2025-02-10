@@ -33,7 +33,9 @@ function Home () {
             </View>
             <Filtro/>
             <View style={styles.containerBotones}>
-                <TouchableOpacity style={styles.botonFiltro}>
+                <TouchableOpacity style={styles.botonFiltro} onPress={() => {
+                    navigation.navigate("Tribus");
+                }}>
                     <Text>Tribus</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.botonFiltro2}>
