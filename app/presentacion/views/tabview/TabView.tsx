@@ -1,40 +1,65 @@
-import React from 'react';
-import {useWindowDimensions, View} from "react-native";
-import {SceneMap, TabBar} from "react-native-tab-view";
+import * as React from 'react';
+import {View, useWindowDimensions, Text, StyleSheet} from 'react-native';
+import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
+import DescripcionYokai from "./DescripcionYokai";
+import EstadisticasYokai from "./EstadisticasYokai";
+import FusionesYokai from "./FusionesYokai";
 
-const DescriptionYokai = () => (
-    <View style={{flex: 1, backgroundColor: '#ff4081'}}/>
+const FirstRoute = () => (
+    <DescripcionYokai/>
+);
+const SecondRoute = () => (
+    <EstadisticasYokai/>
 );
 
-const EstadisticasYokai = () => (
-    <View style={{flex: 1, backgroundColor: '#673ab7'}}/>
-)
-
-const FusionesYokai = () => (
-    <View style={{flex: 1, backgroundColor: '#3a66b7'}}/>
+const ThirdRoute = () => (
+    <FusionesYokai/>
 );
 
-
-function TabView() {
+export default function TabViewExample() {
     const layout = useWindowDimensions();
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        {key: 'first', title: 'First'},
-        {key: 'second', title: 'Second'},
-        {key: 'third', title: 'Third'},
+        { key: 'first', title: 'Descripción' },
+        { key: 'second', title: 'Estadísticas' },
+        { key: 'third', title: 'Fusiones' },
     ]);
 
     const renderScene = SceneMap({
-        first: DescriptionYokai,
-        second: EstadisticasYokai,
-        third: FusionesYokai,
+        first: FirstRoute,
+        second: SecondRoute,
+        third: ThirdRoute,
     });
 
+    const renderTabBar = (props: any) => (
+        <TabBar
+            {...props}
+            activeColor={'black'}
+            inactiveColor={'#525252'}
+            style={{backgroundColor: '#E1E1E1'}}
+            indicatorStyle={{ backgroundColor: 'black', height: 2 }}
+        />
+    );
 
     return (
-        <View></View>
+        <TabView
+            navigationState={{ index, routes }}
+            renderScene={renderScene}
+            renderTabBar={renderTabBar}
+            onIndexChange={setIndex}
+            initialLayout={{ width: layout.width }}
+            style={styles.container}
+        />
     );
 }
 
-export default TabView;
+const styles = StyleSheet.create({
+    container: {
+        width: "90%",
+        flex: 1,
+        backgroundColor: '#DCDCDC',
+        borderRadius: 25,
+        marginBottom: 20,
+    },
+})

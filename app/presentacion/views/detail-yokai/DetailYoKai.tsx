@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
 import { styles } from "./StylesDetailYoKai";
+import TabViewYokai from "../tabview/TabView";
+import TabViewExample from "../tabview/TabView";
 
 const DetailYoKai = () => {
     return (
@@ -30,6 +32,7 @@ const DetailYoKai = () => {
                     <Image source={require("../../../../assets/rangod.png")} style={styles.icon} />
                 </View>
             </View>
+            <TabViewExample/>
         </View>
     );
 };

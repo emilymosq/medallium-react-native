@@ -47,7 +47,8 @@ export const styles = StyleSheet.create({
         width: "100%",
         justifyContent:"center",
         alignItems: "center",
-        bottom: 5
+        bottom: 5,
+        marginBottom: 10
     },
     tribuImagen: {
         width: 55,
@@ -60,7 +61,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        marginVertical: 35,
+        marginVertical: 30,
         gap: 5,
     },
     extra: {
