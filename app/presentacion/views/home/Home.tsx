@@ -49,14 +49,18 @@ function Home () {
             <TextPrincipales text={"Populares"}></TextPrincipales>
 
             <ScrollView style={styles.containerCardYoKai}>
-                <CardYoKai nombre={"Jibanyan"}
-                          nombreJapones={"ジバニャン"}
-                          iconHeart={require("../../../../assets/Heart.png")}
-                          imagenYoKai={require("../../../../assets/jibanyan.png")}
-                          iconTribu={require("../../../../assets/guapo.png")}
-                          iconElemento={require("../../../../assets/fuego.png")}
-                          iconRango={require("../../../../assets/rangod.png")}>
-                </CardYoKai>
+                <TouchableOpacity onPress={()=>{
+                    navigation.navigate("DetailYoKai");
+                }}>
+                    <CardYoKai nombre={"Jibanyan"}
+                              nombreJapones={"ジバニャン"}
+                              iconHeart={require("../../../../assets/Heart.png")}
+                              imagenYoKai={require("../../../../assets/jibanyan.png")}
+                              iconTribu={require("../../../../assets/guapo.png")}
+                              iconElemento={require("../../../../assets/fuego.png")}
+                              iconRango={require("../../../../assets/rangod.png")}>
+                    </CardYoKai>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     )

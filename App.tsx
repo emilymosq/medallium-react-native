@@ -5,6 +5,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Home from "./app/presentacion/views/home/Home";
 import Profile from "./app/presentacion/views/profile/Profile";
+import DetailYoKai from "./app/presentacion/views/detail-yokai/DetailYoKai";
 
 const Stack=createNativeStackNavigator<RootStackParamalist>();
 export type RootStackParamalist={
@@ -12,6 +13,7 @@ export type RootStackParamalist={
     Registro: undefined,
     Home: undefined,
     Profile: undefined,
+    DetailYoKai: undefined
 }
 
 export default function App() {
@@ -22,6 +24,7 @@ export default function App() {
               <Stack.Screen name={"Registro"} component={Registro} ></Stack.Screen>
               <Stack.Screen name={"Home"} component={Home}></Stack.Screen>
               <Stack.Screen name={"Profile"} component={Profile}></Stack.Screen>
+              <Stack.Screen name={"DetailYoKai"} component={DetailYoKai}></Stack.Screen>
           </Stack.Navigator>
       </NavigationContainer>
   );
