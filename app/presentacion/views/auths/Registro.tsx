@@ -8,6 +8,7 @@ import {useNavigation} from "@react-navigation/native";
 import {RootStackParamalist} from "../../../../App";
 import viewModel from "./ViewModel";
 import {useEffect} from "react";
+import {AppFonts} from "../../themes/AppTheme";
 
 function RegistroScreen(){
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
@@ -27,7 +28,6 @@ function RegistroScreen(){
                 </View>
                 <View style={styles.backgroundInput}>
                     <Text style={styles.text}>¡Crea tu cuenta!</Text>
-
                     <View style={styles.containerNombreApellido}>
                         <View style={styles.nombreApellidoInputContainer}>
                             <Text style={styles.textInput}>Nombre</Text>
@@ -77,7 +77,7 @@ function RegistroScreen(){
                                 validateForm()
                             }} text={"CREAR CUENTA"}/>
                     <View style={styles.containerFooter}>
-                        <Text>¿Ya tienes cuenta?</Text>
+                        <Text style={{fontFamily: AppFonts.secondary}}>¿Ya tienes cuenta?</Text>
                         <Text onPress={()=>{
                             navigation.navigate("Login");
                         }}

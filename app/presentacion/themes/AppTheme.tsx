@@ -21,3 +21,11 @@ export const AppColors = {
     botonFase: "#28BBEE"
 }
 
+export const AppFonts = {
+    primary: "Poppins-SemiBold",
+    secondary: "Montserrat-Regular",
+    bold: "Montserrat-Bold",
+    semiBold: "Montserrat-SemiBold",
+    medium: "Montserrat-Medium",
+    light: "Montserrat-Light",
+}

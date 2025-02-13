@@ -1,6 +1,6 @@
 import React from "react";
 import {Text, TouchableOpacity, StyleSheet, TextInput, View, Image} from "react-native";
-import {AppColors} from "../themes/AppTheme";
+import {AppColors, AppFonts} from "../themes/AppTheme";
 
 export const Filtro = () => {
     return(
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         paddingHorizontal:55,
         borderColor: "#C1C1C1",
-        borderWidth: 1
+        borderWidth: 1,
+        fontFamily: AppFonts.secondary
     },
     lupa:{
         position: "absolute",

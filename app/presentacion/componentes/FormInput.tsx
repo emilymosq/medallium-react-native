@@ -1,7 +1,7 @@
 
 import React from "react";
 import {Image, KeyboardType, StyleSheet, Text, TextInput, View} from "react-native";
-import {AppColors} from "../themes/AppTheme";
+import {AppColors, AppFonts} from "../themes/AppTheme";
 
 interface Props {
     placeholder: string,
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         display:"flex",
         margin: "auto",
         marginBottom: 7,
+        fontFamily: AppFonts.secondary
     },
     input: {
         backgroundColor: "white",
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
         borderColor: AppColors.primary,
         borderWidth: 1,
         height: 40,
+        fontFamily: AppFonts.secondary
     },
 })
 

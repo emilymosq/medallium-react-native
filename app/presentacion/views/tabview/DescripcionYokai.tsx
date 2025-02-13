@@ -1,23 +1,20 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
+import {View, Text, StyleSheet, Image} from "react-native";
+import {AppFonts} from "../../themes/AppTheme";
 
+interface Props{
+    descripcion: string,
+    habilidad: string,
+    comidaYK1: string,
+    comidaYK2: string,
+    comidaYK3: string,
+    medalla: any
+}
+//{descripcion, habilidad, comidaYK1, comidaYK2, comidaYK3, medalla}: Props
 const DescripcionYokai = () => {
     return(
         <View style={styles.container}>
-            <Text style={{paddingVertical: 5, fontSize: 15,}}>Tras ser atropellado por un coche, espiritó un cruce para poder vengarse de los coches que pasen.</Text>
-            <View style={styles.containerConjunto}>
-                <Text style={styles.text}>Habilidad</Text>
-                <View style={styles.containerRow}>
-                    <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch</Text>
-                    <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 2</Text>
-                    <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 3</Text>
-                </View>
-                <View style={styles.containerRow}>
-                    <Text style={styles.textRow}>Adrenalina</Text>
-                    <Text style={styles.textRow}>Adrenalina</Text>
-                    <Text style={styles.textRow}>Adrenalina</Text>
-                </View>
-            </View>
+            <Text style={{paddingVertical: 5, fontSize: 15,}}></Text>
             <View style={styles.containerConjunto}>
                 <Text style={styles.text}>Comida favorita</Text>
                 <View style={styles.containerRow}>
@@ -26,9 +23,19 @@ const DescripcionYokai = () => {
                     <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 3</Text>
                 </View>
                 <View style={styles.containerRow}>
-                    <Text style={styles.textRow}>Pescado</Text>
-                    <Text style={styles.textRow}>Chocobarritas</Text>
-                    <Text style={styles.textRow}>Chocobarritas</Text>
+                    <Text style={styles.textRow}>Productos cocidos</Text>
+                    <Text style={styles.textRow}>Productos cocidos</Text>
+                    <Text style={styles.textRow}>Productos cocidos</Text>
+                </View>
+            </View>
+            <View style={styles.containerConjunto}>
+               <View style={styles.containerRow}>
+                   <Text style={[styles.textRow, styles.boldText]}>Habilidad</Text>
+                   <Text style={[styles.textRow, styles.boldText]}>Medalla</Text>
+               </View>
+                <View style={styles.containerRow}>
+                    <Text style={styles.textRow2}>Adrenalina</Text>
+                    <Image source={require("../../../../assets/medallajibanyan.png")} style={styles.medalla}/>
                 </View>
             </View>
         </View>
@@ -49,25 +56,38 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
     },
     text: {
-        fontSize: 17,
-        fontWeight: "bold",
+        fontSize: 16,
         paddingVertical: 5,
+        fontFamily: AppFonts.semiBold
     },
     containerRow: {
         width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        paddingVertical: 5,
+        paddingVertical: 6,
     },
     textRow: {
         flex: 1,
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 14,
+        fontFamily: AppFonts.secondary
     },
     boldText: {
-        fontWeight: '500',
+        fontFamily: AppFonts.semiBold
     },
+    medalla:{
+        width: 50,
+        height: 50,
+        resizeMode: "contain",
+    },
+    textRow2:{
+        flex: 1,
+        textAlign: "center",
+        fontSize: 14,
+        fontFamily: AppFonts.secondary,
+        marginLeft: -30
+    }
 })
 
 export default DescripcionYokai;
