@@ -9,6 +9,7 @@ import {CardYoKai} from "../../componentes/CardYoKai";
 import {TextPrincipales} from "../../componentes/TextPrincipales";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import {Filtro} from "../../componentes/Filtro";
+import {AppFonts} from "../../themes/AppTheme";
 
 
 function Home () {
@@ -33,17 +34,19 @@ function Home () {
             </View>
             <Filtro/>
             <View style={styles.containerBotones}>
-                <TouchableOpacity style={styles.botonFiltro}>
-                    <Text>Tribus</Text>
+                <TouchableOpacity style={styles.botonFiltro} onPress={() => {
+                    navigation.navigate("Tribus");
+                }}>
+                    <Text style={{fontFamily: AppFonts.semiBold}}>Tribus</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.botonFiltro2}>
-                    <Text>Elementos</Text>
+                    <Text style={{fontFamily: AppFonts.semiBold}}>Elementos</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.botonFiltro3}>
-                    <Text>Rango</Text>
+                    <Text style={{fontFamily: AppFonts.semiBold}}>Rango</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.botonFiltro4}>
-                    <Text>Fase</Text>
+                    <Text style={{fontFamily: AppFonts.semiBold}}>Fase</Text>
                 </TouchableOpacity>
             </View>
             <TextPrincipales text={"Populares"}></TextPrincipales>

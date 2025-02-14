@@ -1,6 +1,6 @@
 import React from "react";
 import {Text, TouchableOpacity, StyleSheet} from "react-native";
-import {AppColors} from "../themes/AppTheme";
+import {AppColors, AppFonts} from "../themes/AppTheme";
 
 interface Props{
     onPress: () => void,
@@ -12,7 +12,7 @@ export const BotonPersonalizado = ({text, onPress}: Props) => {
         <TouchableOpacity
             onPress={() => onPress()}
             style={styles.boton}>
-            <Text>{text}</Text>
+            <Text style={{fontFamily: AppFonts.semiBold}}>{text}</Text>
         </TouchableOpacity>
     )
 }

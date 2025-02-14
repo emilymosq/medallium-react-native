@@ -1,17 +1,19 @@
 import React from "react";
 import {View, Image, Text, StyleSheet} from "react-native";
+import {AppFonts} from "../../themes/AppTheme";
 
-const FusionesYokai = () => {
+interface Props{
+    imageYokai: any,
+    nombreYokai: string
+}
+
+const EvolucionesYokai = ({imageYokai, nombreYokai}: Props) => {
     return(
         <View style={styles.container}>
             <Image
                 style={styles.image}
-                source={require("../../../../assets/espinyan.png")}/>
-            <Text style={styles.text}>Espinyan</Text>
-            <Image
-                style={styles.image}
-                source={require("../../../../assets/pelochnyan.png")}/>
-            <Text style={styles.text}>Pelochnyan</Text>
+                source={imageYokai}/>
+            <Text style={styles.text}>{nombreYokai}</Text>
         </View>
     )
 }
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: "center",
         alignItems: "center",
-        paddingVertical:20,
+        paddingTop:20,
         paddingHorizontal: 20
     },
     image:{
@@ -29,10 +31,11 @@ const styles = StyleSheet.create({
     },
     text:{
         paddingVertical: 10,
-        fontSize: 17
+        fontSize: 17,
+        fontFamily: AppFonts.secondary
     }
 
 })
 
 
-export default FusionesYokai;
+export default EvolucionesYokai;

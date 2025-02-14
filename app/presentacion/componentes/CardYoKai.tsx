@@ -1,7 +1,7 @@
 import React from "react";
 import {TextPrincipales} from "./TextPrincipales";
 import {Image, Text, View, StyleSheet} from "react-native";
-import {AppColors} from "../themes/AppTheme";
+import {AppColors, AppFonts} from "../themes/AppTheme";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamalist} from "../../../App";
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         },
         textNombre:{
-        fontWeight: 'bold',
-        fontSize: 18
+        fontFamily: AppFonts.semiBold,
+        fontSize: 18,
         },
         containerCorazon:{
         position: "absolute",
