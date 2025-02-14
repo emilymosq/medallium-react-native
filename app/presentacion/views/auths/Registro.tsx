@@ -23,7 +23,7 @@ function RegistroScreen(){
         style={styles.image}>
             <View style={styles.container}>
                 <View style={styles.contenedorImagen}>
-                    <Image source={require("../../../../assets/logo.png")} style={styles.imagen}></Image>
+                    <Image source={{uri: 'https://i.postimg.cc/yx0JFLjV/Whats-App-Image-2025-02-11-at-10-19-53.jpg' }} style={styles.imagen}></Image>
                 </View>
                 <View style={styles.backgroundInput}>
                     <Text style={styles.text}>¡Crea tu cuenta!</Text>

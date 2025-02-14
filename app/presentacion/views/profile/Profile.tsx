@@ -14,7 +14,7 @@ function Profile() {
                 <Image style={styles.list} source={require("../../../../assets/menu.png")}></Image>
             </View>
             <View style={styles.userImageContainer}>
-                <Image source={require("../../../../assets/user.jpg")} style={styles.userImage}></Image>
+                <Image source={{uri: 'https://i.postimg.cc/yx0JFLjV/Whats-App-Image-2025-02-11-at-10-19-53.jpg' }} style={styles.userImage}></Image>
             </View>
             <View>
                 <Text style={styles.datosPersonales}>Datos Personales</Text>

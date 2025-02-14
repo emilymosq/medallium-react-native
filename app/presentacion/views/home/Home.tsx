@@ -28,7 +28,7 @@ function Home () {
                 <TouchableOpacity onPress={()=>{
                     navigation.navigate("Profile");
                 }}>
-                    <Image style={styles.imagen} source={require('../../../../assets/user.jpg')} />
+                    <Image style={styles.imagen} source={{uri: 'https://i.postimg.cc/yx0JFLjV/Whats-App-Image-2025-02-11-at-10-19-53.jpg' }} />
                 </TouchableOpacity>
             </View>
             <Filtro/>
