@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {AppColors} from "../../themes/AppTheme";
+import {AppColors, AppFonts} from "../../themes/AppTheme";
 
 const styles = StyleSheet.create({
     container: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         textAlign: "center",
         marginVertical:20,
-        fontFamily: 'Poppins'
+        fontFamily: AppFonts.semiBold
     },
     dataContainer: {
         flexDirection: "column",
@@ -51,11 +51,12 @@ const styles = StyleSheet.create({
     },
     dataTitle: {
         textDecorationLine: "underline",
-        fontWeight: "bold",
+        fontFamily: AppFonts.semiBold,
         fontSize: 17
     },
     dataValue: {
-        fontSize: 17
+        fontSize: 17,
+        fontFamily: AppFonts.secondary
     },
     cerrarSesionContainer: {
         alignItems: "flex-end",
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     },
     cerrarSesion: {
         fontSize: 20,
-        fontWeight: "bold",
+        fontFamily: AppFonts.semiBold,
         textDecorationLine: "underline",
     }
 
