@@ -5,5 +5,5 @@ import {UserLocalRepositoryImpl} from "../../../data/repositories/UserLocalRepos
 const {save} = new UserLocalRepositoryImpl();
 
 export const SaveUserUseCase = async (user: UserLogin) => {
-    await save(user);
+    return await save(user);
 };
