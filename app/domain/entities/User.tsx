@@ -7,6 +7,7 @@ export interface UserInterface {
     user: string;
     email: string;
     password: string;
+    image: any;
 }
 
 export type UserLoginInterface = Pick<UserInterface, "email" | "password">;
