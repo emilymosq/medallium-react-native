@@ -4,7 +4,7 @@ import stylesHome from "./StylesHome";
 import styles from "./StylesHome";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {RootStackParamalist} from "../../../../App";
+import {RootStackParamlist} from "../../../../App";
 import {CardYoKai} from "../../componentes/CardYoKai";
 import {TextPrincipales} from "../../componentes/TextPrincipales";
 import {SafeAreaProvider} from "react-native-safe-area-context";
@@ -13,7 +13,7 @@ import {AppFonts} from "../../themes/AppTheme";
 
 
 function Home () {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
     return (
         <View style={styles.container}>
             <View style={styles.navbar}>
