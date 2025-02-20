@@ -1,7 +1,8 @@
-import {DetallesYokaiInterface, YokaiInterface} from "../entities/Yokai";
+import {DetallesYokaiInterface, TribusInterface} from "../entities/Yokai";
 import {ApiDeliveryResponse} from "../../data/sources/remote/models/ResponseApiDelivery";
 
 
 export interface YokaiRepository {
     getAllYokais: () => Promise<DetallesYokaiInterface[]>;
+    getAllTribus: () => Promise<TribusInterface[]>;
 }

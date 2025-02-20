@@ -5,19 +5,23 @@ const stylesCardTribu = StyleSheet.create({
     card: {
         width: "100%",
         padding:20,
-        borderRadius: 15,
+        borderRadius: 10,
         borderWidth: 3.5,
-        borderColor: AppColors.tribuGuapo,
+        //borderColor: AppColors.tribuGuapo,
         backgroundColor: '#fff',
         position: 'relative',
-        marginVertical: 5
+        marginVertical: 10
     },
     nombre:{
-        width:"35%",
+        width:"45%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        fontFamily:AppFonts.semiBold,
+        fontFamily: AppFonts.semiBold
+    },
+    nombreJapones:{
+        fontSize: 22,
+        fontFamily: AppFonts.semiBold
     },
     logo: {
         width:"100%",

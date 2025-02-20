@@ -4,7 +4,12 @@ import { ApiDeliveryResponse } from "../../../data/sources/remote/models/Respons
 import { DetallesYokaiInterface } from "../../../domain/entities/Yokai";
 
 const {getAllYokais} = new YokaiRepositoryImpl();
+const {getAllTribus} = new YokaiRepositoryImpl();
 
 export const YokaiUseCase = async () => {
     return await getAllYokais();
+}
+
+export const TribusUseCase = async () => {
+    return await getAllTribus();
 }
