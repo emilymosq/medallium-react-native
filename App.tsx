@@ -9,8 +9,8 @@ import DetailYoKai from "./app/presentacion/views/detail-yokai/DetailYoKai";
 import Tribus from "./app/presentacion/views/tribus/Tribus";
 import {useFonts} from "expo-font";
 import {DetallesYokaiInterface} from "./app/domain/entities/Yokai";
-import {Saga} from "./app/presentacion/views/saga/Saga";
 import Elementos from "./app/presentacion/views/elementos/Elementos";
+import Saga from "./app/presentacion/views/saga/Saga";
 
 const Stack=createNativeStackNavigator<RootStackParamlist>();
 export type RootStackParamlist={
