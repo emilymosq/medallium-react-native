@@ -18,7 +18,7 @@ function Home() {
 
     useEffect(() => {
         getYokais();
-    }, []);
+    }, [yokais]);
 
     // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
     const keyExtractor = (item: DetallesYokaiInterface) => item?.id_detallesYokai?.toString() || '';
@@ -64,8 +64,9 @@ function Home() {
                 renderItem={({ item }: { item: DetallesYokaiInterface }) => <RenderYokai item={item} />}
                 keyExtractor={keyExtractor}
                 style={[styles.containerCardYoKai, { maxHeight: height * 0.5 }]}
-                initialNumToRender={10}
-                windowSize={10}
+                initialNumToRender={10} //los que se renderizan recien se abre la app
+                windowSize={10} //items por pantalla
+                // onEndReached={} evento para llamar por partes evento de desencadenado
                 ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
             />
         </View>

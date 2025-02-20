@@ -5,8 +5,9 @@ import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamlist} from "../../../../App";
 import {styles} from "./StylesTribus";
-import {TribusInterface} from "../../../domain/entities/Yokai";
+import { TribusInterface} from "../../../domain/entities/Yokai";
 import {TribusViewModel} from "./ViewModel"
+import RenderYokai from "../home/ItemYokai";
 import RenderTribus from "./ItemTribus";
 
 const Tribus = () => {

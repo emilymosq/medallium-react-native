@@ -17,6 +17,7 @@ const RenderYokai = ({ item }: Props) => {
             navigation.navigate("DetailYoKai");
         }}>
             <CardYoKai
+                id_Tribu={item.yokai.tribu.id_Tribu}
                 nombre={item.yokai.name}
                 nombreJapones={item.nombreJapo}
                 iconHeart={require("../../../../assets/Heart.png")}

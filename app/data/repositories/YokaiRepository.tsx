@@ -20,7 +20,6 @@ export class YokaiRepositoryImpl implements YokaiRepository{
     async getAllTribus(): Promise<TribusInterface[]> {
         try {
             const response = await ApiDelivery.get("/tribus/get-tribus");
-
             return Promise.resolve(response.data);
         } catch (error) {
             let e = (error as AxiosError);
