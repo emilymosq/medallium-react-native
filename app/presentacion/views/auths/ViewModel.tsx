@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {GetUserUseCase} from "../../../domain/useCases/auth/GetUser";
-import {LoginAuthUseCase} from "../../../domain/useCases/UserLocal/LoginAuth";
-import {SaveUserUseCase} from "../../../domain/useCases/auth/SaveUser";
-import {UserLogin} from "../../../domain/entities/User";
-import {RegisterAuthUseCase} from "../../../domain/useCases/UserLocal/RegisterAuth";
+import {GetUserUseCase} from "../../../domain/useCases/UserLocal/GetUser";
+import {LoginAuthUseCase} from "../../../domain/useCases/auth/LoginAuth";
+import {SaveUserUseCase} from "../../../domain/useCases/UserLocal/SaveUser";
+import {UserLogin, UserLoginInterface} from "../../../domain/entities/User";
+import {RegisterAuthUseCase} from "../../../domain/useCases/auth/RegisterAuth";
 import {ApiDelivery} from "../../../data/sources/remote/api/ApiDelivery";
+import useUserLocalStorage from "../../hooks/useUserLocalStorage";
 
 const LoginViewModel = () =>{
     const [errorMessage, setErrorMessage] = useState<string>("");
@@ -12,25 +13,25 @@ const LoginViewModel = () =>{
         email: "",
         password: "",
     })
-    useEffect(() => {
-        getUserSession()
-    })
+    const {user, getUserSession} = useUserLocalStorage();
 
-    const getUserSession = async () => {
-        const getUser = await GetUserUseCase();
-        console.log("Sesion del usuario: " + JSON.stringify(getUser));
-    }
+    // const getUserSession = async () => {
+    //     const getUser = await GetUserUseCase();
+    //     console.log("Sesion del usuario: " + JSON.stringify(getUser));
+    // }
     const onChangeLogin = (property: string, value: any) => {
         setValues({...values, [property]: value})
     }
 
     const login = async () => {
         if (validateForm()){
-            const response = await LoginAuthUseCase(values)
+            const response = await LoginAuthUseCase(values as UserLoginInterface)
+            console.log("Respuesta de login:", response);
             if(!response.success){
                 setErrorMessage(response.message)
             } else{
                 await SaveUserUseCase(response.data as UserLogin)
+                getUserSession()
             }
         }
     }
@@ -44,14 +45,15 @@ const LoginViewModel = () =>{
             setErrorMessage("Contraseña obligatoria")
             return false;
         }
-        return true;
+        return true
     }
 
     return{
         ...values,
         onChangeLogin,
         login,
-        errorMessage
+        errorMessage,
+        user
     }
 }
 

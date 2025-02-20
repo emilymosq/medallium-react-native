@@ -9,8 +9,8 @@ import DetailYoKai from "./app/presentacion/views/detail-yokai/DetailYoKai";
 import Tribus from "./app/presentacion/views/tribus/Tribus";
 import {useFonts} from "expo-font";
 
-const Stack=createNativeStackNavigator<RootStackParamalist>();
-export type RootStackParamalist={
+const Stack=createNativeStackNavigator<RootStackParamlist>();
+export type RootStackParamlist={
     Login: undefined,
     Registro: undefined,
     Home: undefined,

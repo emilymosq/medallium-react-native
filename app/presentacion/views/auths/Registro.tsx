@@ -5,13 +5,13 @@ import FormInput from "../../componentes/FormInput";
 import {BotonPersonalizado} from "../../componentes/BotonPersonalizado";
 import {createNativeStackNavigator, NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {useNavigation} from "@react-navigation/native";
-import {RootStackParamalist} from "../../../../App";
+import {RootStackParamlist} from "../../../../App";
 import viewModel from "./ViewModel";
 import {useEffect} from "react";
 import {AppFonts} from "../../themes/AppTheme";
 
 function RegistroScreen(){
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
     const {email, password, firstName, lastName, user, onChangeRegister, register, errorMessage, validateForm} = viewModel.RegisterViewModel();
 
     useEffect(() => {

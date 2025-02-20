@@ -4,10 +4,15 @@ import styles from "./StylesProfile";
 import {Check, List} from "react-bootstrap-icons";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {RootStackParamalist} from "../../../../App";
+import {RootStackParamlist} from "../../../../App";
+import {PropsStackNavigation} from "../../interfaces/StackNav";
+import ViewModel from "./ViewModel";
 
-function Profile() {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+const Profile = ({navigation, route}: PropsStackNavigation) => {
+    //const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+
+    const {deleteSession} = ViewModel.ProfileViewModel();
+
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -33,6 +38,7 @@ function Profile() {
             </View>
             <View style={styles.cerrarSesionContainer}>
                 <TouchableOpacity onPress={()=>{
+                    deleteSession();
                     navigation.navigate("Login");
                 }}>
                     <Text style={styles.cerrarSesion}>Cerrar sesion</Text>
