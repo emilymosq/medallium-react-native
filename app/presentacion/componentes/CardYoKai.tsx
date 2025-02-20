@@ -79,7 +79,9 @@ const styles = StyleSheet.create({
         image: {
         width: 80,
         height: 100,
-    },
+            resizeMode: "contain",
+
+        },
         containerIcons: {
         width: "35%",
         flexDirection: "row",

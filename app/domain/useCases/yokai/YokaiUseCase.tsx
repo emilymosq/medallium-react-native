@@ -5,6 +5,6 @@ import { DetallesYokaiInterface } from "../../../domain/entities/Yokai";
 
 const {getAllYokais} = new YokaiRepositoryImpl();
 
-export const YokaiUseCase = async (): Promise<ApiDeliveryResponse> => {
+export const YokaiUseCase = async () => {
     return await getAllYokais();
 }

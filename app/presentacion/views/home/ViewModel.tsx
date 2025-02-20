@@ -9,9 +9,7 @@ const YokaiViewModel = () => {
     const getYokais = async () => {
         try {
             const response = await YokaiUseCase();
-            setYokais(response.data);
-            console.log(response.data);
-            console.log(response);
+            setYokais(response);
         } catch (error) {
             console.error("Error fetching Yokais:", error);
         }
@@ -21,6 +19,7 @@ const YokaiViewModel = () => {
 
     return {
         yokais,
+        getYokais
     };
 };
 
