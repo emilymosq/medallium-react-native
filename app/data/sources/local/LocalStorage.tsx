@@ -25,9 +25,18 @@ export const LocalStorage = () => {
         }
     }
 
+    const getYokai = async (key: string) => {
+        try{
+            return await AsyncStorage.getItem(key)
+        } catch (error){
+            console.log("Error retrieving data from local storage: " + error);
+        }
+    }
+
     return{
         save,
         getItem,
-        deleteItem
+        deleteItem,
+        getYokai
     }
 }

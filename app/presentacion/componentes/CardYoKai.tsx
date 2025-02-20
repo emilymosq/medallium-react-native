@@ -4,7 +4,7 @@ import {Image, Text, View, StyleSheet} from "react-native";
 import {AppColors, AppFonts} from "../themes/AppTheme";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {RootStackParamalist} from "../../../App";
+import {RootStackParamlist} from "../../../App";
 
 interface Props{
     nombre: string,
@@ -13,12 +13,11 @@ interface Props{
     imagenYoKai: any,
     iconTribu: any,
     iconElemento: any,
-    iconRango: any
-
+    iconRango: any,
 }
 
 export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango}: Props) => {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
     return(
         <View style={styles.card}>
             <View style={styles.textContainer}>
@@ -80,7 +79,9 @@ const styles = StyleSheet.create({
         image: {
         width: 80,
         height: 100,
-    },
+            resizeMode: "contain",
+
+        },
         containerIcons: {
         width: "35%",
         flexDirection: "row",
