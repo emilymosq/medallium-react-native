@@ -1,19 +1,16 @@
 import React from "react";
-import {Image, ScrollView, Text, TextInput, TouchableOpacity, View} from "react-native";
-import stylesHome from "./StylesHome";
+import {Image, FlatList, Text, TouchableOpacity, View, ActivityIndicator, ScrollView} from "react-native";
 import styles from "./StylesHome";
-import {useNavigation} from "@react-navigation/native";
-import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {RootStackParamalist} from "../../../../App";
-import {CardYoKai} from "../../componentes/CardYoKai";
-import {TextPrincipales} from "../../componentes/TextPrincipales";
-import {SafeAreaProvider} from "react-native-safe-area-context";
-import {Filtro} from "../../componentes/Filtro";
-import {AppFonts} from "../../themes/AppTheme";
-
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamlist } from "../../../../App";
+import { CardYoKai } from "../../componentes/CardYoKai";
+import { TextPrincipales } from "../../componentes/TextPrincipales";
+import { Filtro } from "../../componentes/Filtro";
+import { AppFonts } from "../../themes/AppTheme";
 
 function Home () {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
     return (
         <View style={styles.container}>
             <View style={styles.navbar}>
@@ -56,12 +53,12 @@ function Home () {
                     navigation.navigate("DetailYoKai");
                 }}>
                     <CardYoKai nombre={"Jibanyan"}
-                              nombreJapones={"ジバニャン"}
-                              iconHeart={require("../../../../assets/Heart.png")}
-                              imagenYoKai={require("../../../../assets/jibanyan.png")}
-                              iconTribu={require("../../../../assets/guapo.png")}
-                              iconElemento={require("../../../../assets/fuego.png")}
-                              iconRango={require("../../../../assets/rangod.png")}>
+                               nombreJapones={"ジバニャン"}
+                               iconHeart={require("../../../../assets/Heart.png")}
+                               imagenYoKai={require("../../../../assets/jibanyan.png")}
+                               iconTribu={require("../../../../assets/guapo.png")}
+                               iconElemento={require("../../../../assets/fuego.png")}
+                               iconRango={require("../../../../assets/rangod.png")}>
                     </CardYoKai>
                 </TouchableOpacity>
             </ScrollView>
