@@ -1,40 +1,27 @@
 import {View, Text, Image, StyleSheet} from "react-native";
 import {AppColors} from "../themes/AppTheme";
+import stylesCardTribu from "../views/tribus/StylesCardTribu";
 
-const CardTribu = () => {
+interface Props{
+    nombre: string,
+    nombreJapones: string,
+    iconTribu: any,
+}
+
+const CardTribu = ({nombre, nombreJapones, iconTribu} : Props) => {
     return(
-        <View style={styles.card}>
-            <View style={styles.nombre}>
-                <Text>Guapa</Text>
-                <Text>0/71</Text>
+        <View style={stylesCardTribu.card}>
+            <View style={stylesCardTribu.nombre}>
+                <Text style={{fontSize:23}}>{nombre}</Text>
+            </View>
+            <View style={stylesCardTribu.logo}>
+                <Image source={iconTribu}/>
             </View>
             <View>
-                <Image source={require("../../../assets/guapa2.png")}/>
-            </View>
-            <View>
-                <Text>かわいい</Text>
+                <Text style={{fontSize:20}}>{nombreJapones}</Text>
             </View>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    card: {
-        width: "100%",
-        padding:20,
-        borderRadius: 15,
-        borderWidth: 3.5,
-        borderColor: AppColors.tribuGuapo,
-        backgroundColor: '#fff',
-        position: 'relative',
-        marginVertical: 5
-    },
-    nombre:{
-        width:"35%",
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    }
-})
 
 export default CardTribu;

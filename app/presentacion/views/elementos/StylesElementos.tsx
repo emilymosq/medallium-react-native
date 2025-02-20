@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
         width: 23,
         height: 23,
     },
-    containerCardTribu:{
+    containerCardElementos:{
         width: "100%",
         maxHeight: "90%"
     },

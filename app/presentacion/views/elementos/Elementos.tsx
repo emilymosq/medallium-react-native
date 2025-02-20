@@ -6,9 +6,9 @@ import {CardYoKai} from "../../componentes/CardYoKai";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamalist} from "../../../../App";
-import {styles} from "./StylesTribus";
+import {styles} from "./StylesElementos";
 
-const Tribus = () => {
+const Elementos = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
     return(
         <View style={styles.container}>
@@ -16,9 +16,9 @@ const Tribus = () => {
                 <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <Image source={require("../../../../assets/back.png")} style={styles.icon}/>
                 </TouchableOpacity>
-                <TextPrincipales text={"Tribus"}/>
+                <TextPrincipales text={"Elementos"}/>
             </View>
-            <ScrollView style={styles.containerCardTribu}>
+            <ScrollView style={styles.containerCardElementos}>
                 <CardTribu nombre={"Guapa"}
                            nombreJapones={"かわいい"}
                            iconTribu={require("../../../../assets/guapa2.png")}/>
@@ -27,4 +27,4 @@ const Tribus = () => {
     )
 }
 
-export default Tribus;
+export default Elementos;
