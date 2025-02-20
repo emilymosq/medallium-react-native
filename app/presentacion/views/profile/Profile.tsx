@@ -4,10 +4,24 @@ import styles from "./StylesProfile";
 import {Check, List} from "react-bootstrap-icons";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {RootStackParamalist} from "../../../../App";
+import {RootStackParamlist} from "../../../../App";
+import {PropsStackNavigation} from "../../interfaces/StackNav";
+import ViewModel from "./ViewModel";
+import {UserLogin} from "../../../domain/entities/User";
 
-function Profile() {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+
+const Profile = ({navigation, route}: PropsStackNavigation) => {
+    //const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+
+    const {deleteSession, user} = ViewModel.ProfileViewModel();
+
+    if(!user){
+        return (
+            <View style={styles.container}>
+                <Text>Cargando datos del usuario...</Text>
+            </View>
+        );
+    }
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -20,12 +34,12 @@ function Profile() {
                 <Text style={styles.datosPersonales}>Datos Personales</Text>
             </View>
             <View style={styles.dataContainer}>
-                <Text style={styles.dataTitle}>Nombre de usuario</Text>
-                <Text style={styles.dataValue}>Antonio Adolfo</Text>
+                <Text style={styles.dataTitle}>Nombre y Apellidos</Text>
+                <Text style={styles.dataValue}>{user.firstName + " " + user.lastName}</Text>
             </View>
             <View style={styles.dataContainer}>
                 <Text style={styles.dataTitle}>Id de usuario</Text>
-                <Text style={styles.dataValue}>23-47516985236</Text>
+                <Text style={styles.dataValue}>{user.id}</Text>
             </View>
             <View style={styles.dataContainer}>
                 <Text style={styles.dataTitle}>Yokais obtenidos</Text>
@@ -33,6 +47,7 @@ function Profile() {
             </View>
             <View style={styles.cerrarSesionContainer}>
                 <TouchableOpacity onPress={()=>{
+                    deleteSession();
                     navigation.navigate("Login");
                 }}>
                     <Text style={styles.cerrarSesion}>Cerrar sesion</Text>

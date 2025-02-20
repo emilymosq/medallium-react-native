@@ -17,8 +17,26 @@ export const LocalStorage = () => {
         }
     }
 
+    const deleteItem = async (key: string) => {
+        try {
+            return await AsyncStorage.removeItem(key);
+        }catch (error) {
+            console.error("Error al eliminar el item" + error);
+        }
+    }
+
+    const getYokai = async (key: string) => {
+        try{
+            return await AsyncStorage.getItem(key)
+        } catch (error){
+            console.log("Error retrieving data from local storage: " + error);
+        }
+    }
+
     return{
         save,
         getItem,
+        deleteItem,
+        getYokai
     }
 }
