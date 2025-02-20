@@ -11,14 +11,14 @@ interface Props{
 const CardTribu = ({nombre, nombreJapones, iconTribu} : Props) => {
     return(
         <View style={stylesCardTribu.card}>
-            <View style={stylesCardTribu.nombre}>
-                <Text style={{fontSize:23}}>{nombre}</Text>
+            <View>
+                <Text style={stylesCardTribu.nombre}>{nombre}</Text>
             </View>
             <View style={stylesCardTribu.logo}>
                 <Image source={iconTribu}/>
             </View>
             <View>
-                <Text style={{fontSize:20}}>{nombreJapones}</Text>
+                <Text style={stylesCardTribu.nombreJapo}>{nombreJapones}</Text>
             </View>
         </View>
     )

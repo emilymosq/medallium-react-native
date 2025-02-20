@@ -19,6 +19,5 @@ const styles = StyleSheet.create({
         marginVertical:23,
         textAlign: "center",
         fontFamily: AppFonts.primary,
-        marginStart: "40%",
     },
 })

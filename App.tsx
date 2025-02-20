@@ -8,6 +8,7 @@ import Profile from "./app/presentacion/views/profile/Profile";
 import DetailYoKai from "./app/presentacion/views/detail-yokai/DetailYoKai";
 import Tribus from "./app/presentacion/views/tribus/Tribus";
 import {useFonts} from "expo-font";
+import Elementos from "./app/presentacion/views/elementos/Elementos";
 
 const Stack=createNativeStackNavigator<RootStackParamalist>();
 export type RootStackParamalist={
@@ -17,6 +18,7 @@ export type RootStackParamalist={
     Profile: undefined,
     DetailYoKai: undefined,
     Tribus: undefined,
+    Elementos: undefined,
 }
 
 export default function App() {
@@ -40,6 +42,7 @@ export default function App() {
               <Stack.Screen name={"Profile"} component={Profile}></Stack.Screen>
               <Stack.Screen name={"DetailYoKai"} component={DetailYoKai}></Stack.Screen>
               <Stack.Screen name={"Tribus"} component={Tribus}></Stack.Screen>
+              <Stack.Screen name={"Elementos"} component={Elementos}></Stack.Screen>
           </Stack.Navigator>
       </NavigationContainer>
   );

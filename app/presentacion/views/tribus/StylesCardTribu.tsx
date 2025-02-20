@@ -18,6 +18,7 @@ const stylesCardTribu = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         fontFamily:AppFonts.semiBold,
+        fontSize: 23,
     },
     logo: {
         width:"100%",
@@ -25,7 +26,15 @@ const stylesCardTribu = StyleSheet.create({
         alignItems: 'flex-end',
         position: 'absolute',
         marginVertical: 10,
-    }
+    },
+    nombreJapo:{
+        width:"35%",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        fontFamily:AppFonts.secondary,
+        fontSize: 20,
+    },
 })
 
 export default stylesCardTribu;
