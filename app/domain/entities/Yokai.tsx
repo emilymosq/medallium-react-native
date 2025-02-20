@@ -16,3 +16,14 @@ export interface DetallesYokaiInterface {
     nombreJapo: string;
     yokai: YokaiInterface;
 }
+
+// export interface TribusInterface {
+//     id_Tribu: number;
+//     nombre: string;
+//     caracteristicasGenerales: string;
+//     tipoBonus: string;
+//     descripcion: string;
+//     image: string;
+//     imagenPixel: string;
+//     nombreJapones: string;
+// }

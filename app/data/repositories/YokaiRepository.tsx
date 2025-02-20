@@ -16,4 +16,5 @@ export class YokaiRepositoryImpl implements YokaiRepository{
             return Promise.resolve(JSON.parse(JSON.stringify(e.response?.data)));
         }
     }
+
 }
