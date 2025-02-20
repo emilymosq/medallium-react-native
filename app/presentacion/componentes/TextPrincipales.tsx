@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
     text: {
         fontWeight: "condensedBold",
         fontSize: 22,
+        marginVertical:23,
         textAlign: "center",
-        marginVertical:20,
-        fontFamily: AppFonts.primary
+        fontFamily: AppFonts.primary,
+        marginStart: "40%",
     },
 })
