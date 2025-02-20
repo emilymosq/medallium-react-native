@@ -17,7 +17,7 @@ function Home() {
 
     useEffect(() => {
         getYokais()
-    }, []);
+    }, [yokais]);
 
     const renderYokai = ({ item }: { item: DetallesYokaiInterface }) => (
         <TouchableOpacity onPress={() => {
@@ -74,8 +74,12 @@ function Home() {
                 <FlatList
                     data={yokais}
                     renderItem={renderYokai}
-                    keyExtractor={(item, index) => item.id_detallesYokai.toString() + " - " + index}
+                    keyExtractor={(item) => item.id_detallesYokai.toString()}
                     style={styles.containerCardYoKai}
+                    initialNumToRender={10}//los aeu renderizan recien se habre al app
+                    windowSize={10}//items por pantalla
+                   // onEndReached={}evento para lamar por partes evento de desencadenado
+                    ListFooterComponent={<View style={{marginBottom: 60, paddingVertical: 10}}><Text style={{textAlign:"center"}}>no hay mas elementos</Text></View>}
                 />
             </View>
         );
