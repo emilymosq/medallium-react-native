@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {AppColors} from "../../themes/AppTheme";
+import {AppColors, AppFonts} from "../../themes/AppTheme";
 
 const styles = StyleSheet.create({
     container: {
@@ -34,21 +34,20 @@ const styles = StyleSheet.create({
     },
     text: {
         fontWeight: "condensedBold",
-        fontSize: 26,
+        fontSize: 22,
         textAlign: "center",
         marginBottom:20,
-        fontFamily: 'Poppins'
+        fontFamily: AppFonts.primary
     },
     subrayado: {
         textDecorationLine: 'underline',
-        fontWeight: "bold",
+        fontFamily: AppFonts.semiBold
     },
     containerFooter:{
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        width: "100%",
-        paddingHorizontal: 30
+        justifyContent: "center",
+        marginHorizontal: 10,
+        gap: 5
     },
 
 

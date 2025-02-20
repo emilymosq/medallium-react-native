@@ -10,6 +10,7 @@ import FormInput from "../../componentes/FormInput";
 import {BotonPersonalizado} from "../../componentes/BotonPersonalizado";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamalist} from "../../../../App";
+import {AppFonts} from "../../themes/AppTheme";
 
 const Login = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
@@ -28,18 +29,20 @@ const Login = () => {
                         placeholder={""}
                         keyboardType="email-address"
                         secureTextEntry={false}
+                        onPressFormInterface={(text) => (text)}
                     ></FormInput>
                     <FormInput
                         text={"Contraseña"}
                         placeholder={""}
                         keyboardType="default"
                         secureTextEntry={true}
+                        onPressFormInterface={(text) => (text)}
                     ></FormInput>
                     <BotonPersonalizado text={"INICIAR SESIÓN"} onPress={()=>{
                         navigation.navigate("Home");
                     }}/>
                     <View style={styles.containerFooter}>
-                        <Text>¿No tienes cuenta?</Text>
+                        <Text style={{fontFamily: AppFonts.secondary}}>¿No tienes cuenta?</Text>
                         <Text onPress={()=>{
                             navigation.navigate("Registro");
                         }}

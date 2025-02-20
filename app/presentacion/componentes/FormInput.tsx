@@ -1,16 +1,17 @@
 
 import React from "react";
 import {Image, KeyboardType, StyleSheet, Text, TextInput, View} from "react-native";
-import {AppColors} from "../themes/AppTheme";
+import {AppColors, AppFonts} from "../themes/AppTheme";
 
 interface Props {
     placeholder: string,
     keyboardType: KeyboardType,
     secureTextEntry: boolean,
-    text: string
+    text: string,
+    onPressFormInterface: (text: string) => void,
 }
 
-const FormInput = ({text, placeholder, keyboardType, secureTextEntry}: Props)=> {
+const FormInput = ({text, placeholder, keyboardType, secureTextEntry, onPressFormInterface}: Props)=> {
     return(
         <View>
             <Text style={styles.textInput}>{text}</Text>
@@ -18,6 +19,7 @@ const FormInput = ({text, placeholder, keyboardType, secureTextEntry}: Props)=> 
                        placeholder={placeholder}
                        keyboardType={keyboardType}
                        secureTextEntry={secureTextEntry}
+                       onChangeText={(text) => onPressFormInterface(text)}
             ></TextInput>
         </View>
     );
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
         display:"flex",
         margin: "auto",
         marginBottom: 7,
+        fontFamily: AppFonts.secondary
     },
     input: {
         backgroundColor: "white",
@@ -38,6 +41,7 @@ const styles = StyleSheet.create({
         borderColor: AppColors.primary,
         borderWidth: 1,
         height: 40,
+        fontFamily: AppFonts.secondary
     },
 })
 

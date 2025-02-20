@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {AppColors} from "../../themes/AppTheme";
+import {AppColors, AppFonts} from "../../themes/AppTheme";
 
 const styles = StyleSheet.create({
     container: {
@@ -34,9 +34,10 @@ const styles = StyleSheet.create({
     },
     text: {
         fontWeight: "condensedBold",
-        fontSize: 26,
+        fontSize: 22,
         textAlign: "center",
         marginBottom:20,
+        fontFamily: AppFonts.primary
     },
     containerNombreApellido: {
         flexDirection: "row",
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
         width:"90%",
         margin: "auto",
         marginBottom: 7,
+        fontFamily: AppFonts.secondary
     },
     nombreApellidoInputContainer: {
         width: "46%",
@@ -60,17 +62,17 @@ const styles = StyleSheet.create({
         borderColor: AppColors.primary,
         borderWidth: 1,
         height: 40,
+        fontFamily: AppFonts.secondary
     },
     subrayado: {
         textDecorationLine: 'underline',
-        fontWeight: "bold",
+        fontFamily: AppFonts.semiBold
     },
     containerFooter:{
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        width: "100%",
-        paddingHorizontal: 25
+        justifyContent: "center",
+        marginHorizontal: 10,
+        gap: 5
     },
 
 

@@ -1,10 +1,13 @@
 import {StyleSheet} from "react-native";
-import {AppColors} from "../../themes/AppTheme";
+import {AppColors, AppFonts} from "../../themes/AppTheme";
 
 const styles = StyleSheet.create({
     container: {
+        width: "100%",
+        height: "100%",
         backgroundColor: AppColors.background,
-        paddingHorizontal: 30
+        paddingHorizontal: 30,
+        paddingTop: 30
     },
     header: {
         flexDirection: "row",
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         textAlign: "center",
         marginVertical:20,
-        fontFamily: 'Poppins'
+        fontFamily: AppFonts.semiBold
     },
     dataContainer: {
         flexDirection: "column",
@@ -43,24 +46,27 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         width: "100%",
-        height: "15%"
+        height: 100,
+        marginVertical: 10
     },
     dataTitle: {
         textDecorationLine: "underline",
-        fontWeight: "bold",
+        fontFamily: AppFonts.semiBold,
         fontSize: 17
     },
     dataValue: {
-        fontSize: 17
+        fontSize: 17,
+        fontFamily: AppFonts.secondary
     },
     cerrarSesionContainer: {
+        alignItems: "flex-end",
         position: "absolute",
-        bottom: -130,
-        right: 60,
+        bottom: 30,
+        right: 40
     },
     cerrarSesion: {
         fontSize: 20,
-        fontWeight: "bold",
+        fontFamily: AppFonts.semiBold,
         textDecorationLine: "underline",
     }
 
