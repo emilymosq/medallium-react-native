@@ -21,7 +21,7 @@ function Home() {
     }, [yokais]);
 
     // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
-    const keyExtractor = (item: DetallesYokaiInterface) => item?.id_detallesYokai?.toString() || '';
+    //const keyExtractor = (item: DetallesYokaiInterface) => item?.id_detallesYokai?.toString() || '';
 
     return (
         <View style={styles.container}>
@@ -62,7 +62,7 @@ function Home() {
             <FlatList
                 data={yokais}
                 renderItem={({ item }: { item: DetallesYokaiInterface }) => <RenderYokai item={item} />}
-                keyExtractor={keyExtractor}
+                keyExtractor={(item) => item.id_detallesYokai.toString()}
                 style={[styles.containerCardYoKai, { maxHeight: height * 0.5 }]}
                 initialNumToRender={10} //los que se renderizan recien se abre la app
                 windowSize={10} //items por pantalla

@@ -7,7 +7,6 @@ import {RootStackParamlist} from "../../../../App";
 import {styles} from "./StylesTribus";
 import { TribusInterface} from "../../../domain/entities/Yokai";
 import {TribusViewModel} from "./ViewModel"
-import RenderYokai from "../home/ItemYokai";
 import RenderTribus from "./ItemTribus";
 
 const Tribus = () => {
@@ -19,7 +18,7 @@ const Tribus = () => {
     }, []);
 
     // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
-    const keyExtractor = (item: TribusInterface) => item?.id_Tribu?.toString() || '';
+    // const keyExtractor = (item: TribusInterface) => item?.id_Tribu?.toString() || '';
 
     return(
         <View style={styles.container}>
@@ -33,7 +32,7 @@ const Tribus = () => {
                 <FlatList
                     data={tribus}
                     renderItem={({ item }: { item: TribusInterface }) => <RenderTribus item={item} />}
-                    keyExtractor={keyExtractor}
+                    keyExtractor={(item) => item.id_Tribu.toString()}
                     initialNumToRender={10}
                     windowSize={10}
                     ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
