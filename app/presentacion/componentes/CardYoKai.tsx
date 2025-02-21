@@ -14,12 +14,27 @@ interface Props{
     iconTribu: any,
     iconElemento: any,
     iconRango: any,
+    id_Tribu: number,
 }
 
-export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango}: Props) => {
+const tribuColors: { [key: number]: string } = {
+    2: AppColors.tribuGuapo,
+    3: AppColors.tribuValiente,
+    4: AppColors.tribuMisterioso,
+    5: AppColors.tribuRobusto,
+    6: AppColors.tribuOscuro,
+    7: AppColors.tribuSiniestro,
+    8: AppColors.tribuAmable,
+    9: AppColors.tribuMalefico,
+    10: AppColors.tribuEscurridizo,
+};
+
+export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango, id_Tribu}: Props) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+
+    const borderColor = tribuColors[id_Tribu] || '#000000'; // Color por defecto si id_Tribu no se encuentra
     return(
-        <View style={styles.card}>
+        <View style={[styles.card, { borderColor }]}>
             <View style={styles.textContainer}>
                 <Text style={styles.textNombre}>{nombre}</Text>
                 <Text style={styles.textNombre}>{nombreJapones}</Text>

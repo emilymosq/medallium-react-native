@@ -5,6 +5,7 @@ export interface YokaiInterface {
     id_tribu: number;
     id_elemento: number;
     id_fase: number;
+    tribu: TribusInterface;
 }
 
 export interface DetallesYokaiInterface {
@@ -15,4 +16,15 @@ export interface DetallesYokaiInterface {
     descripcion: string;
     nombreJapo: string;
     yokai: YokaiInterface;
+}
+
+export interface TribusInterface {
+    id_Tribu: number;
+    nombre: string;
+    caracteristicasGenerales: string;
+    tipoBonus: string;
+    descripcion: string;
+    image: string;
+    imagenPixel: string;
+    nombreJapones: string;
 }

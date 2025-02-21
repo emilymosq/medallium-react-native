@@ -1,15 +1,25 @@
-import {Image, View, Text, TouchableOpacity, ScrollView} from "react-native";
-import CardTribu from "../../componentes/CardTribu";
-import React from "react";
+import React, { useEffect } from 'react';
+import {Image, View, Text, TouchableOpacity, FlatList} from "react-native";
 import {TextPrincipales} from "../../componentes/TextPrincipales";
-import {CardYoKai} from "../../componentes/CardYoKai";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamlist} from "../../../../App";
 import {styles} from "./StylesTribus";
+import { TribusInterface} from "../../../domain/entities/Yokai";
+import {TribusViewModel} from "./ViewModel"
+import RenderTribus from "./ItemTribus";
 
 const Tribus = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+    const {tribus, getTribus} = TribusViewModel();
+
+    useEffect(() => {
+        getTribus();
+    }, []);
+
+    // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
+    // const keyExtractor = (item: TribusInterface) => item?.id_Tribu?.toString() || '';
+
     return(
         <View style={styles.container}>
             <View style={styles.topSection}>
@@ -18,11 +28,16 @@ const Tribus = () => {
                 </TouchableOpacity>
                 <TextPrincipales text={"Tribus"}/>
             </View>
-            <ScrollView style={styles.containerCardTribu}>
-                <CardTribu nombre={"Guapa"}
-                           nombreJapones={"かわいい"}
-                           iconTribu={require("../../../../assets/guapa2.png")}/>
-            </ScrollView>
+            <View style={styles.containerCardTribu}>
+                <FlatList
+                    data={tribus}
+                    renderItem={({ item }: { item: TribusInterface }) => <RenderTribus item={item} />}
+                    keyExtractor={(item) => item.id_Tribu.toString()}
+                    initialNumToRender={10}
+                    windowSize={10}
+                    ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
+                />
+            </View>
         </View>
     )
 }
