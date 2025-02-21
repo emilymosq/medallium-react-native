@@ -5,36 +5,30 @@ const stylesCardTribu = StyleSheet.create({
     card: {
         width: "100%",
         padding:20,
-        borderRadius: 15,
+        borderRadius: 10,
         borderWidth: 3.5,
-        borderColor: AppColors.tribuGuapo,
+        //borderColor: AppColors.tribuGuapo,
         backgroundColor: '#fff',
         position: 'relative',
-        marginVertical: 5
+        marginVertical: 10
     },
-    nombre:{
-        width:"35%",
+    containerNombre:{
+        width:"45%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        fontFamily:AppFonts.semiBold,
+    },
+    nombre:{
         fontSize: 23,
+        fontFamily: AppFonts.semiBold
     },
     logo: {
         width:"100%",
         height:"80%",
         alignItems: 'flex-end',
         position: 'absolute',
-        marginVertical: 4,
-    },
-    nombreJapo:{
-        width:"35%",
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        fontFamily:AppFonts.secondary,
-        fontSize: 20,
-    },
+        marginVertical: 10,
+    }
 })
 
 export default stylesCardTribu;
