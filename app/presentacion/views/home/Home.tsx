@@ -8,7 +8,7 @@ import { TextPrincipales } from '../../componentes/TextPrincipales';
 import { Filtro } from '../../componentes/Filtro';
 import { AppFonts } from '../../themes/AppTheme';
 import YokaiViewModel from './ViewModel';
-import { DetallesYokaiInterface } from '../../../domain/entities/Yokai';
+import {DetallesYokaiInterface} from '../../../domain/entities/Yokai';
 import RenderYokai from "./ItemYokai";
 
 function Home() {
@@ -67,13 +67,8 @@ function Home() {
             <TextPrincipales text="Populares" />
             <FlatList
                 data={yokais}
-                renderItem={({ item }: { item: DetallesYokaiInterface }) => {
-                    if (item && item.yokai && item.yokai.tribu) { // Asegúrate de que yokai y tribu estén definidos
-                        return <RenderYokai item={item} />;
-                    }
-                    return null; // No renderizar si faltan propiedades
-                }}
-                keyExtractor={(item, index) => item?.id_detallesYokai?.toString() || index.toString()}
+                renderItem={({ item }: { item: DetallesYokaiInterface }) => <RenderYokai item={item} />}
+                keyExtractor={(item, index) => item?.id_detallesYokai?.toString() || ''}
                 style={[styles.containerCardYoKai, { maxHeight: height * 0.5 }]}
                 initialNumToRender={10} // los que se renderizan recién se abre la app
                 windowSize={10} // items por pantalla
