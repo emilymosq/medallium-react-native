@@ -4,6 +4,7 @@ import {TribusInterface} from "../../../domain/entities/Yokai";
 
 export const TribusViewModel = () => {
     const [tribus, setTribus] = useState<TribusInterface[]>([]);
+    const [loading, setLoading] = useState(true);
 
     const getTribus = async () => {
         try {
@@ -14,7 +15,15 @@ export const TribusViewModel = () => {
         }
     }
 
-    getTribus()
+    useEffect(() => {
+        const fetchData = async () => {
+            await getTribus();
+            setLoading(false);
+        };
+
+        fetchData();
+    },[]);
+
 
     return {
         tribus,

@@ -14,17 +14,17 @@ const RenderYokai = ({ item }: Props) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
         return (
         <TouchableOpacity onPress={() => {
-            navigation.navigate("DetailYoKai");
+            navigation.navigate("DetailYoKai", {yokai: item});
         }}>
             <CardYoKai
                 id_Tribu={item.yokai.tribu.id_Tribu}
                 nombre={item.yokai.name}
                 nombreJapones={item.nombreJapo}
-                iconHeart={require("../../../../assets/Heart.png")}
+                iconHeart={require("../../../../assets/heartw.png")}
                 imagenYoKai={{ uri: item.image }}
-                iconTribu={require("../../../../assets/guapo.png")}
-                iconElemento={require("../../../../assets/fuego.png")}
-                iconRango={require("../../../../assets/rangod.png")}
+                iconTribu={{uri: item.yokai.tribu.imagenPixel}}
+                iconElemento={{uri: item.yokai.elemento.image}}
+                iconRango={{uri: item.yokai.rango.image}}
             />
         </TouchableOpacity>
     );

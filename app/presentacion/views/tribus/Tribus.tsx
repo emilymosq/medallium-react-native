@@ -32,7 +32,7 @@ const Tribus = () => {
                 <FlatList
                     data={tribus}
                     renderItem={({ item }: { item: TribusInterface }) => <RenderTribus item={item} />}
-                    keyExtractor={(item) => item.id_Tribu.toString()}
+                    keyExtractor={(item) => item?.id_Tribu?.toString() || ''}
                     initialNumToRender={10}
                     windowSize={10}
                     ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}

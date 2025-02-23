@@ -13,7 +13,7 @@ const stylesCardTribu = StyleSheet.create({
         marginVertical: 10
     },
     containerNombre:{
-        width:"45%",
+        width:"100%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -24,10 +24,15 @@ const stylesCardTribu = StyleSheet.create({
     },
     logo: {
         width:"100%",
-        height:"80%",
+        height:"100%",
         alignItems: 'flex-end',
         position: 'absolute',
         marginVertical: 10,
+    },
+    imagen: {
+        width: 80,
+        height: 80,
+        resizeMode: 'contain'
     }
 })
 

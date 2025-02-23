@@ -19,7 +19,7 @@ export type RootStackParamlist={
     Registro: undefined,
     Home: undefined,
     Profile: undefined,
-    DetailYoKai: undefined,
+    DetailYoKai: {yokai: DetallesYokaiInterface},
     Tribus: undefined,
     Elementos: undefined,
     Saga: undefined,
