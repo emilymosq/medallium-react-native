@@ -4,12 +4,17 @@ import { styles } from "./StylesDetailYoKai";
 import {ElementoRareza} from "../../componentes/ElementoRareza";
 import {TopInfoYokai} from "../../componentes/TopInfoYokai";
 import TabViewInfo from "../tabview/TabView";
-import {useNavigation} from "@react-navigation/native";
+import {RouteProp, useNavigation, useRoute} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {RootStackParamalist} from "../../../../App";
+import {RootStackParamlist} from "../../../../App";
+import {DetallesYokaiInterface} from "../../../domain/entities/Yokai";
+
+type DetailYoKaiRouteProp = RouteProp<RootStackParamlist, 'DetailYoKai'>;
 
 const DetailYoKai = () => {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamalist>>();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+    const route = useRoute<DetailYoKaiRouteProp>();
+    const { yokai } = route.params;
     return (
         <View style={styles.container}>
             <View style={styles.topSection}>
@@ -18,15 +23,15 @@ const DetailYoKai = () => {
                 </TouchableOpacity>
                 <Image source={require("../../../../assets/heartw.png")} style={styles.icon} />
             </View>
-            <TopInfoYokai nombre={"Jibanyan"} nombreJapones={"ジバニャン"} yokaiImagen={require("../../../../assets/jibanyan2.png")} tribuImagen={require("../../../../assets/guapo.png")}/>
+            <TopInfoYokai nombre={yokai.yokai.name} nombreJapones={yokai.nombreJapo} yokaiImagen={{uri: yokai.image}} tribuImagen={{uri: yokai.yokai.tribu.imagenPixel}} id_Tribu={yokai.yokai.tribu.id_Tribu}/>
             <View style={styles.bottomSection}>
                 <Image source={require("../../../../assets/addyokai.png")} style={styles.iconAdd} />
                 <ElementoRareza
-                    text={"Fuego"}
-                    icon={require("../../../../assets/fuego.png")}/>
+                    text={yokai.yokai.elemento.aName}
+                    icon={{uri: yokai.yokai.elemento.image}}/>
                 <ElementoRareza
-                    text={"Rango"}
-                    icon={require("../../../../assets/rangod.png")}/>
+                    text={yokai.yokai.rango.name}
+                    icon={{uri: yokai.yokai.rango.image}}/>
             </View>
             <TabViewInfo/>
         </View>

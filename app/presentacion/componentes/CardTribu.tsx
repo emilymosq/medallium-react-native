@@ -30,7 +30,7 @@ const CardTribu = ({id_Tribu, nombre, nombreJapones, iconTribu} : Props) => {
                 <Text style={stylesCardTribu.nombre}>{nombre}</Text>
             </View>
             <View style={stylesCardTribu.logo}>
-                <Image source={iconTribu}/>
+                <Image style={stylesCardTribu.imagen} source={iconTribu}/>
             </View>
             <View>
                 <Text style={{fontSize:20}}>{nombreJapones}</Text>

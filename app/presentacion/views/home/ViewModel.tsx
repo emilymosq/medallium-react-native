@@ -4,7 +4,7 @@ import { YokaiUseCase } from "../../../domain/useCases/yokai/YokaiUseCase";
 
 const YokaiViewModel = () => {
     const [yokais, setYokais] = useState<DetallesYokaiInterface[]>([]);
-
+    const [loading, setLoading] = useState(true);
 
     const getYokais = async () => {
         try {
@@ -15,7 +15,14 @@ const YokaiViewModel = () => {
         }
     }
 
-    getYokais()
+    useEffect(() => {
+        const fetchData = async () => {
+            await getYokais();
+            setLoading(false);
+        };
+
+        fetchData();
+    },[]);
 
     return {
         yokais,

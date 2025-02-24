@@ -8,7 +8,7 @@ import { TextPrincipales } from '../../componentes/TextPrincipales';
 import { Filtro } from '../../componentes/Filtro';
 import { AppFonts } from '../../themes/AppTheme';
 import YokaiViewModel from './ViewModel';
-import { DetallesYokaiInterface } from '../../../domain/entities/Yokai';
+import {DetallesYokaiInterface} from '../../../domain/entities/Yokai';
 import RenderYokai from "./ItemYokai";
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
 
     useEffect(() => {
         getYokais();
-    }, [yokais]);
+    }, []);
 
     // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
     //const keyExtractor = (item: DetallesYokaiInterface) => item?.id_detallesYokai?.toString() || '';
@@ -68,12 +68,12 @@ function Home() {
             <FlatList
                 data={yokais}
                 renderItem={({ item }: { item: DetallesYokaiInterface }) => <RenderYokai item={item} />}
-                keyExtractor={(item) => item.id_detallesYokai.toString()}
+                keyExtractor={(item, index) => item?.id_detallesYokai?.toString() || ''}
                 style={[styles.containerCardYoKai, { maxHeight: height * 0.5 }]}
-                initialNumToRender={10} //los que se renderizan recien se abre la app
-                windowSize={10} //items por pantalla
+                initialNumToRender={10} // los que se renderizan recién se abre la app
+                windowSize={10} // items por pantalla
                 // onEndReached={} evento para llamar por partes evento de desencadenado
-                ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
+                ListFooterComponent={<View style={{ paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
             />
         </View>
     );
