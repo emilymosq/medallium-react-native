@@ -4,10 +4,27 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import DescripcionYokai from "./DescripcionYokai";
 import EstadisticasYokai from "./EstadisticasYokai";
 import EvolucionesYokai from "./EvolucionesYokai";
+import {DatosCombateInterface, DetallesYokaiInterface} from "../../../domain/entities/Yokai";
+import {useEffect} from "react";
+import {DetailYokaiViewModel} from "../detail-yokai/ViewModel";
+
+interface TabViewInfoProps {
+    yokai: DetallesYokaiInterface;
+    estadisticas: DatosCombateInterface;
+}
+
+export default function TabViewInfo({ yokai, estadisticas }: TabViewInfoProps) {
+
+    const comidas = yokai.comida.split(", ");
 
 const FirstRoute = () => (
     <DescripcionYokai
-
+        descripcion={yokai.descripcion}
+        habilidad={""}
+        comidaYK1={comidas[0]}
+        comidaYK2={comidas[1]}
+        comidaYK3={comidas[2]}
+        medalla={{uri: yokai.medalla}}
     />
 );
 const SecondRoute = () => (
@@ -27,8 +44,6 @@ const ThirdRoute = () => (
         nombreYokai={"Espinyan"}
     />
 );
-
-export default function TabViewInfo() {
     const layout = useWindowDimensions();
 
     const [index, setIndex] = React.useState(0);
@@ -53,6 +68,12 @@ export default function TabViewInfo() {
             indicatorStyle={{ backgroundColor: 'black', height: 2}}
         />
     );
+    const { datosCombate, getDatosCombate } = DetailYokaiViewModel(); // Usar el ViewModel para obtener los datos
+
+    useEffect(() => {
+        // Llamar al ViewModel para obtener los datos de combate
+        getDatosCombate();
+    }, []);
 
     return (
         <TabView

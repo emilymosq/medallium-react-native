@@ -5,6 +5,7 @@ import { DetallesYokaiInterface } from "../../../domain/entities/Yokai";
 
 const {getAllYokais} = new YokaiRepositoryImpl();
 const {getAllTribus} = new YokaiRepositoryImpl();
+const {getAllDatosCombate} = new YokaiRepositoryImpl();
 
 export const YokaiUseCase = async () => {
     return await getAllYokais();
@@ -12,4 +13,8 @@ export const YokaiUseCase = async () => {
 
 export const TribusUseCase = async () => {
     return await getAllTribus();
+}
+
+export const DatosCombateUseCase = async () => {
+    return await getAllDatosCombate();
 }

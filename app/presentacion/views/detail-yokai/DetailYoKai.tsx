@@ -14,7 +14,8 @@ type DetailYoKaiRouteProp = RouteProp<RootStackParamlist, 'DetailYoKai'>;
 const DetailYoKai = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
     const route = useRoute<DetailYoKaiRouteProp>();
-    const { yokai } = route.params;
+    const { yokai, estadisticas } = route.params;
+
     return (
         <View style={styles.container}>
             <View style={styles.topSection}>
@@ -27,13 +28,13 @@ const DetailYoKai = () => {
             <View style={styles.bottomSection}>
                 <Image source={require("../../../../assets/addyokai.png")} style={styles.iconAdd} />
                 <ElementoRareza
-                    text={yokai.yokai.elemento.aName}
+                    text={yokai.yokai.elemento.nombre}
                     icon={{uri: yokai.yokai.elemento.image}}/>
                 <ElementoRareza
                     text={yokai.yokai.rango.name}
                     icon={{uri: yokai.yokai.rango.image}}/>
             </View>
-            <TabViewInfo/>
+            <TabViewInfo yokai={yokai} estadisticas={estadisticas}/>
         </View>
     );
 };
