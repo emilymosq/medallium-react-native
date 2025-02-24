@@ -12,6 +12,12 @@ const stylesCardElementos = StyleSheet.create({
         position: 'relative',
         marginVertical: 5,
     },
+    containerNombre:{
+        width:"100%",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
     nombre:{
         flexDirection: 'row',
         justifyContent: 'space-between',
