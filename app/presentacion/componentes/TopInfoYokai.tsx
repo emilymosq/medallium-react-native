@@ -6,13 +6,30 @@ interface Props{
     nombre: string,
     nombreJapones: string,
     yokaiImagen: any,
-    tribuImagen: any
+    tribuImagen: any,
+    id_Tribu: number,
 }
 
-export const TopInfoYokai = ({nombre, nombreJapones, yokaiImagen, tribuImagen}: Props) => {
+const yokaiColors: { [key: number]: string } = {
+    2: AppColors.tribuGuapo,
+    3: AppColors.tribuValiente,
+    4: AppColors.tribuMisterioso,
+    5: AppColors.tribuRobusto,
+    6: AppColors.tribuOscuro,
+    7: AppColors.tribuSiniestro,
+    8: AppColors.tribuAmable,
+    9: AppColors.tribuMalefico,
+    10: AppColors.tribuEscurridizo,
+};
+
+
+export const TopInfoYokai = ({nombre, nombreJapones, yokaiImagen, tribuImagen, id_Tribu}: Props) => {
+    const backgroundColor = yokaiColors[id_Tribu] || '#000000'; // Color por defecto si id_Tribu no se encuentra
+
+
     return(
         <View style={styles.yoKaiContainer}>
-            <View style={styles.yoKai}>
+            <View style={[styles.yoKai, {backgroundColor}]}>
                 <Text style={styles.yoKaiName}>{nombre}</Text>
                 <Text style={styles.yoKaiName}>{nombreJapones}</Text>
                 <Image source={yokaiImagen} style={styles.yoKaiImage} />
@@ -38,12 +55,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     yoKaiName: {
-        fontSize: 20,
+        fontSize: 19,
         fontFamily: AppFonts.semiBold,
     },
     yoKaiImage: {
-        width: 160,
-        height: 160,
+        width: 150,
+        height: 150,
         resizeMode: "contain",
         marginVertical: 5,
     },

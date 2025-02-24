@@ -6,6 +6,8 @@ export interface YokaiInterface {
     id_elemento: number;
     id_fase: number;
     tribu: TribusInterface;
+    elemento: ElementosInterface;
+    rango: RangosInterface;
 }
 
 export interface DetallesYokaiInterface {
@@ -25,6 +27,36 @@ export interface TribusInterface {
     tipoBonus: string;
     descripcion: string;
     image: string;
-    imagenPixel: string;
     nombreJapones: string;
+    imagenPixel: string;
+}
+
+export interface DatosCombateInterface {
+    id_datosCombate: number;
+    puntosVida: number;
+    fuerza: number;
+    defensa: number;
+    velocidad: number;
+    habilidad: string;
+    espiritacion: number;
+    total: number;
+    yokai: YokaiInterface;
+}
+
+export interface ElementosInterface {
+    id_Elementos: number;
+    aName: string;
+    fortaleza: string;
+    debilidad: string;
+    descripcion: string;
+    image: string;
+}
+
+export interface RangosInterface {
+    id_Rango: number;
+    name: string;
+    descripcion: string
+    caracteristicasGenerales: string;
+    tipoBonus: string;
+    image: string;
 }

@@ -12,7 +12,7 @@ const RenderTribus = ({ item }: Props) => {
             id_Tribu={item.id_Tribu}
             nombre={item.nombre}
             nombreJapones={item.nombreJapones}
-            iconTribu={{uri: "https://i.postimg.cc/hvKrQQ83/jibanyan.png"}}/>
+            iconTribu={{uri: item.image}}/>
     );
 };
 
