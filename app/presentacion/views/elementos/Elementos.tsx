@@ -34,10 +34,10 @@ const Elementos = () => {
             <View style={styles.containerCardElementos}>
                 <FlatList
                     data={elemento}
-                    renderItem={({ item }: { item: ElementosInterface }) => <RenderElementos item={item} />}
-                    keyExtractor={(item) => item?.id_elemento?.toString() || ''}
-                    initialNumToRender={10}
-                    windowSize={10}
+                    renderItem={({ item, index }: { item: ElementosInterface, index: number }) => <RenderElementos index={index} item={item} />}
+                    keyExtractor={(item) => item?.id_elemento?.toString()}
+                    initialNumToRender={8}
+                    windowSize={8}
                     ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
                 />
             </View>

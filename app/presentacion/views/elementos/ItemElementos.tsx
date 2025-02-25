@@ -5,13 +5,14 @@ import CardElemento from "../../componentes/CardElemento";
 
 interface Props{
     item: ElementosInterface;
+    index: number;
 }
 
-const RenderElementos = ({ item }: Props) => {
+const RenderElementos = ({ item, index }: Props) => {
     return (
         <CardElemento
-            id_Elementos={item.id_elemento}
-            a_name={item.a_name}
+            id_elementos={index}
+            nombre={item.nombre}
             descripcion={item.descripcion}
             image={{uri: item.image}}/>
     );

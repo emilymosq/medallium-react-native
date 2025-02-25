@@ -30,7 +30,7 @@ export class YokaiRepositoryImpl implements YokaiRepository{
 
     async getAllElementos(): Promise<ElementosInterface[]> {
         try {
-            const response = await ApiDelivery.get("/elemento/get-elementos");
+            const response = await ApiDelivery.get("/elemento/get-all-elementos");
             return Promise.resolve(response.data);
         } catch (error) {
             let e = (error as AxiosError);

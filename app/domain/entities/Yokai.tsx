@@ -45,7 +45,7 @@ export interface DatosCombateInterface {
 
 export interface ElementosInterface {
     id_elemento: number;
-    a_name: string;
+    nombre: string;
     fortaleza: string;
     debilidad: string;
     descripcion: string;
