@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     sagaLogo: {
         width: "100%",
-        height: "30%",
+        height: 250,
         flexDirection: "row",
         justifyContent: 'space-between',
         flexWrap: 'wrap',
