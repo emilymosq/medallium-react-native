@@ -1,7 +1,7 @@
 import {StyleSheet} from "react-native";
 import {AppColors} from "../../themes/AppTheme";
 
-export const styles = StyleSheet.create({
+const stylesRango = StyleSheet.create({
     container: {
         backgroundColor: AppColors.background,
         paddingHorizontal: 30,
@@ -14,20 +14,20 @@ export const styles = StyleSheet.create({
         width: "80%",
 
     },
+    imagen: {
+        width: 50,
+        height: 50,
+        resizeMode: "contain",
+        borderRadius: 50
+    },
     icon: {
         width: 23,
         height: 23,
     },
-    containerCard:{
+    containerCardYoKai:{
         width: "100%",
-        maxHeight: "90%"
-    },
-    sagaLogo: {
-        width: "100%",
-        height: "30%",
-        flexDirection: "row",
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        resizeMode: "contain",
+        maxHeight: 400
     },
 })
+
+export default stylesRango;
