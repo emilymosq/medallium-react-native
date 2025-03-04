@@ -27,7 +27,7 @@ const DetailYoKai = () => {
             <View style={styles.bottomSection}>
                 <Image source={require("../../../../assets/addyokai.png")} style={styles.iconAdd} />
                 <ElementoRareza
-                    text={yokai.yokai.elemento.aName}
+                    text={yokai.yokai.elemento.nombre}
                     icon={{uri: yokai.yokai.elemento.image}}/>
                 <ElementoRareza
                     text={yokai.yokai.rango.name}

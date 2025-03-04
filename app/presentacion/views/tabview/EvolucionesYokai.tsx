@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     image:{
-        width:100,
-        height:100,
+        width:90,
+        height:90,
     },
     text:{
         paddingVertical: 10,
-        fontSize: 17,
+        fontSize: 16,
         fontFamily: AppFonts.secondary
     }
 

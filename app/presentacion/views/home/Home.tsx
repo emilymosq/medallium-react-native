@@ -20,9 +20,6 @@ function Home() {
         getYokais();
     }, []);
 
-    // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
-    //const keyExtractor = (item: DetallesYokaiInterface) => item?.id_detallesYokai?.toString() || '';
-
     return (
         <View style={styles.container}>
             <View style={styles.navbar}>

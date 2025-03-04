@@ -47,20 +47,20 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     yoKai: {
-        width: 280,
-        height: 280,
+        width: 250,
+        height: 250,
         backgroundColor: AppColors.tribuGuapo,
         borderRadius: 200,
         alignItems: "center",
         justifyContent: "center",
     },
     yoKaiName: {
-        fontSize: 19,
+        fontSize: 18,
         fontFamily: AppFonts.semiBold,
     },
     yoKaiImage: {
-        width: 150,
-        height: 150,
+        width: 140,
+        height: 140,
         resizeMode: "contain",
         marginVertical: 5,
     },
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems: "center",
         bottom: 5,
-        marginBottom: 10
+        marginBottom: 8
     },
     tribuImagen: {
-        width: 55,
-        height: 55,
+        width: 50,
+        height: 50,
         resizeMode: "contain",
         position: "absolute"
     },
