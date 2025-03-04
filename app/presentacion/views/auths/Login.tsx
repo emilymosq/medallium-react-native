@@ -27,7 +27,7 @@ const Login = ({navigation, route}: PropsStackNavigation) => {
         // También, si se efectua un cambio en su estado se ejecuta y vuelve a comprobar.
         console.log("Usuario actualizado:", user);
         if (user && user?.token) {
-            navigation.replace("Home")
+            navigation.replace("DrawerNavigator")
         }
     }, [user]);
 

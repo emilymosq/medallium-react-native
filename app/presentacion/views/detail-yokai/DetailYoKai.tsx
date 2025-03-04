@@ -18,7 +18,7 @@ const DetailYoKai = () => {
     return (
         <View style={styles.container}>
             <View style={styles.topSection}>
-                <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image source={require("../../../../assets/back.png")} style={styles.icon}/>
                 </TouchableOpacity>
                 <Image source={require("../../../../assets/heartw.png")} style={styles.icon} />

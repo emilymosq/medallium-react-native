@@ -1,15 +1,13 @@
 import {Image, View, Text, TouchableOpacity, ScrollView, useWindowDimensions, FlatList} from "react-native";
 import React, {useEffect} from "react";
-import {TextPrincipales} from "../../componentes/TextPrincipales";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamlist} from "../../../../App";
-import {CardYoKai} from "../../componentes/CardYoKai";
-import {Filtro} from "../../componentes/Filtro";
 import YokaiViewModel from "../home/ViewModel";
 import {DetallesYokaiInterface} from "../../../domain/entities/Yokai";
 import stylesRango from "./StylesRango";
 import RenderYokai from "./ItemYokai";
+import {styles} from "../tribus/StylesTribus";
 
 const Rango = () => {
     const { height } = useWindowDimensions();
@@ -23,10 +21,12 @@ const Rango = () => {
     return(
         <View style={stylesRango.container}>
             <View style={stylesRango.topSection}>
-                <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image source={require("../../../../assets/back.png")} style={stylesRango.icon}/>
                 </TouchableOpacity>
-                <TextPrincipales text={"Rango"}/>
+                <View style={styles.containerText}>
+                    <Text style={styles.textCentrado}>Rango</Text>
+                </View>
             </View>
 
             <FlatList

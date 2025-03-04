@@ -25,10 +25,10 @@ const YokaiViewModel = () => {
         fetchData();
     },[]);
 
-    const toggleFavorite = (id: number) => {
+    const toggleFavorite = (id_Yokai: number) => {
         setFavorites((prevFavorites) => ({
             ...prevFavorites,
-            [id]: !prevFavorites[id],
+            [id_Yokai]: !prevFavorites[id_Yokai],
         }));
     };
 
