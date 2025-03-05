@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Image, View, Text, TouchableOpacity, FlatList, Modal, Button } from 'react-native';
-import { TextPrincipales } from "../../componentes/TextPrincipales";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamlist } from "../../../../App";
@@ -25,16 +24,15 @@ const Tribus = () => {
         setModalVisible(true);
     };
 
-    // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
-    // const keyExtractor = (item: TribusInterface) => item?.id_Tribu?.toString() || '';
-
     return(
         <View style={styles.container}>
             <View style={styles.topSection}>
-                <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                <Image source={require("../../../../assets/back.png")} style={styles.icon}/>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image source={require("../../../../assets/back.png")} style={styles.icon}/>
                 </TouchableOpacity>
-                <TextPrincipales text={"Tribus"}/>
+                <View style={styles.containerText}>
+                    <Text style={styles.textCentrado}>Tribus</Text>
+                </View>
             </View>
             <View style={styles.containerCardTribu}>
                 <FlatList

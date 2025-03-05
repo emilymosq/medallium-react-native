@@ -5,6 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { CardYoKai } from '../../componentes/CardYoKai';
 import { DetallesYokaiInterface } from '../../../domain/entities/Yokai';
 import { RootStackParamlist } from '../../../../App';
+import YokaiViewModel from "../home/ViewModel";
 
 interface Props{
     item: DetallesYokaiInterface;
@@ -12,6 +13,8 @@ interface Props{
 
 const RenderYokai = ({ item }: Props) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+    const { favorites, toggleFavorite } = YokaiViewModel();
+    const isFavorite = favorites[item.yokai.id_Yokai];
         return (
         <TouchableOpacity onPress={() => {
             navigation.navigate("DetailYoKai", {yokai: item});
@@ -25,6 +28,7 @@ const RenderYokai = ({ item }: Props) => {
                 iconTribu={{uri: item.yokai.tribu.imagenPixel}}
                 iconElemento={{uri: item.yokai.elemento.image}}
                 iconRango={{uri: item.yokai.rango.image}}
+                onPressHeart={() => toggleFavorite(item.yokai.id_Yokai)}
             />
         </TouchableOpacity>
     );

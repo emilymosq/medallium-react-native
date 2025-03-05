@@ -21,16 +21,13 @@ const Elementos = () => {
     return(
         <View style={styles.container}>
             <View style={styles.topSection}>
-                <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Image source={require("../../../../assets/back.png")} style={styles.icon}/>
                 </TouchableOpacity>
-                <TextPrincipales text={"Elementos"}/>
+                <View style={styles.containerText}>
+                    <Text style={styles.textCentrado}>Elementos</Text>
+                </View>
             </View>
-            {/*<ScrollView style={styles.containerCardElementos}>*/}
-            {/*    <CardElemento a_name={"Fuego"}*/}
-            {/*               descripcion={"El fuego quema la tierra. Es fuerte contra tierra, pero se apaga con agua."}*/}
-            {/*               image={require("../../../../assets/fuego.png")}/>*/}
-            {/*</ScrollView>*/}
             <View style={styles.containerCardElementos}>
                 <FlatList
                     data={elemento}

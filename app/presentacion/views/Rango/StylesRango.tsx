@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {AppColors} from "../../themes/AppTheme";
+import {AppColors, AppFonts} from "../../themes/AppTheme";
 
 const stylesRango = StyleSheet.create({
     container: {
@@ -8,11 +8,11 @@ const stylesRango = StyleSheet.create({
         paddingTop: 30
     },
     topSection: {
+        width: "100%",
         flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "center",
-        width: "80%",
-
+        marginVertical: 15
     },
     imagen: {
         width: 50,
@@ -27,6 +27,15 @@ const stylesRango = StyleSheet.create({
     containerCardYoKai:{
         width: "100%",
         maxHeight: 400
+    },
+    containerText: {
+        flex:1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    textCentrado: {
+        fontSize: 20,
+        fontFamily: AppFonts.bold
     },
 })
 

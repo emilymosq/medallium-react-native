@@ -5,6 +5,7 @@ import { YokaiUseCase } from "../../../domain/useCases/yokai/YokaiUseCase";
 const YokaiViewModel = () => {
     const [yokais, setYokais] = useState<DetallesYokaiInterface[]>([]);
     const [loading, setLoading] = useState(true);
+    const [favorites, setFavorites] = useState<Record<string, boolean>>({});
 
     const getYokais = async () => {
         try {
@@ -24,9 +25,18 @@ const YokaiViewModel = () => {
         fetchData();
     },[]);
 
+    const toggleFavorite = (id_Yokai: number) => {
+        setFavorites((prevFavorites) => ({
+            ...prevFavorites,
+            [id_Yokai]: !prevFavorites[id_Yokai],
+        }));
+    };
+
     return {
         yokais,
-        getYokais
+        getYokais,
+        favorites,
+        toggleFavorite,
     };
 };
 

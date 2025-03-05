@@ -3,32 +3,22 @@ import {AppColors, AppFonts} from "../../themes/AppTheme";
 
 export const styles = StyleSheet.create({
     container: {
+        width: "100%",
+        height: "100%",
         backgroundColor: AppColors.background,
         paddingHorizontal: 30,
         paddingTop: 30
     },
-    topSection: {
-        width: "100%",
+    header: {
         flexDirection: "row",
-        justifyContent: "flex-start",
+        justifyContent: "space-between",
         alignItems: "center",
-        marginVertical: 15
+        paddingTop: 25,
+        paddingBottom: 10,
     },
-    icon: {
-        width: 23,
-        height: 23,
-    },
-    containerCardSaga:{
-        width: "100%",
-        maxHeight: "90%"
-    },
-    sagaLogo: {
-        width: "100%",
-        height: 250,
-        flexDirection: "row",
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        resizeMode: "contain",
+    list: {
+        width: 25,
+        height: 25
     },
     containerText: {
         flex: 1,

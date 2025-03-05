@@ -12,18 +12,19 @@ import {DetallesYokaiInterface} from "./app/domain/entities/Yokai";
 import Elementos from "./app/presentacion/views/elementos/Elementos";
 import Saga from "./app/presentacion/views/saga/Saga";
 import Rango from "./app/presentacion/views/Rango/Rango";
+import DrawerNavigator from "./app/presentacion/navigation/DrawerNavigator";
 
 const Stack=createNativeStackNavigator<RootStackParamlist>();
 export type RootStackParamlist={
     Login: undefined,
     Registro: undefined,
-    Home: undefined,
+    DrawerNavigator: undefined,
     Profile: undefined,
     DetailYoKai: {yokai: DetallesYokaiInterface},
     Tribus: undefined,
     Elementos: undefined,
     Saga: undefined,
-    Rango: undefined
+    Rango: undefined,
 }
 
 export default function App() {
@@ -43,7 +44,7 @@ export default function App() {
           <Stack.Navigator screenOptions={{headerShown:false}}>
               <Stack.Screen name={"Login"} component={Login} ></Stack.Screen>
               <Stack.Screen name={"Registro"} component={Registro} ></Stack.Screen>
-              <Stack.Screen name={"Home"} component={Home}></Stack.Screen>
+              <Stack.Screen name={"DrawerNavigator"} component={DrawerNavigator}></Stack.Screen>
               <Stack.Screen name={"Profile"} component={Profile}></Stack.Screen>
               <Stack.Screen name={"DetailYoKai"} component={DetailYoKai}></Stack.Screen>
               <Stack.Screen name={"Tribus"} component={Tribus}></Stack.Screen>

@@ -1,17 +1,14 @@
 import React from "react";
 import {View, Text, Image, TouchableOpacity} from "react-native";
 import styles from "./StylesProfile";
-import {Check, List} from "react-bootstrap-icons";
-import {useNavigation} from "@react-navigation/native";
-import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {RootStackParamlist} from "../../../../App";
 import {PropsStackNavigation} from "../../interfaces/StackNav";
 import ViewModel from "./ViewModel";
-import {UserLogin} from "../../../domain/entities/User";
+import {DrawerNavigationProp} from "@react-navigation/drawer";
 
+type ProfileScreenNavigationProp = DrawerNavigationProp<RootStackParamlist, 'DrawerNavigator'>;
 
-const Profile = ({navigation, route}: PropsStackNavigation) => {
-    //const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+const Profile = ({ navigation }: { navigation: ProfileScreenNavigationProp }) => {
 
     const {deleteSession, user} = ViewModel.ProfileViewModel();
 
@@ -25,7 +22,9 @@ const Profile = ({navigation, route}: PropsStackNavigation) => {
     return(
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.list} source={require("../../../../assets/menu.png")}></Image>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Image style={styles.list} source={require("../../../../assets/menu.png")}></Image>
+                </TouchableOpacity>
             </View>
             <View style={styles.userImageContainer}>
                 <Image source={{uri: 'https://i.postimg.cc/yx0JFLjV/Whats-App-Image-2025-02-11-at-10-19-53.jpg' }} style={styles.userImage}></Image>
