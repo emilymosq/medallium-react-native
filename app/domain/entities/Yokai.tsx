@@ -3,7 +3,7 @@ export interface YokaiInterface {
     name: string;
     id_rango: number;
     id_tribu: number;
-    id_elemento: number;
+    id_Elemento: number;
     id_fase: number;
     tribu: TribusInterface;
     elemento: ElementosInterface;
@@ -44,7 +44,7 @@ export interface DatosCombateInterface {
 }
 
 export interface ElementosInterface {
-    id_elemento: number;
+    id_Elemento: number;
     nombre: string;
     fortaleza: string;
     debilidad: string;

@@ -32,7 +32,7 @@ const Elementos = () => {
                 <FlatList
                     data={elemento}
                     renderItem={({ item, index }: { item: ElementosInterface, index: number }) => <RenderElementos index={index} item={item} />}
-                    keyExtractor={(item) => item?.id_elemento?.toString()}
+                    keyExtractor={(item) => item?.id_Elemento?.toString()}
                     initialNumToRender={8}
                     windowSize={8}
                     ListFooterComponent={<View style={{paddingVertical: 10 }}><Text style={{ textAlign: 'center' }}>no hay más elementos</Text></View>}
