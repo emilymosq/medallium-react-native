@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
         paddingVertical: 25
     },
     list: {
-        width: 20,
-        height: 20
+        width: 25,
+        height: 25
     },
     userImageContainer: {
         alignItems: "center"

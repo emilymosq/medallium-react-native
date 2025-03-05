@@ -1,6 +1,5 @@
 import React from "react";
-import {TextPrincipales} from "./TextPrincipales";
-import {Image, Text, View, StyleSheet} from "react-native";
+import {Image, Text, View, StyleSheet, TouchableOpacity} from "react-native";
 import {AppColors, AppFonts} from "../themes/AppTheme";
 import {useNavigation} from "@react-navigation/native";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
@@ -15,6 +14,7 @@ interface Props{
     iconElemento: any,
     iconRango: any,
     id_Tribu: number,
+    onPressHeart: () => void
 }
 
 const tribuColors: { [key: number]: string } = {
@@ -29,7 +29,7 @@ const tribuColors: { [key: number]: string } = {
     10: AppColors.tribuEscurridizo,
 };
 
-export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango, id_Tribu}: Props) => {
+export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconTribu, iconElemento, iconRango, id_Tribu, onPressHeart}: Props) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
 
     const borderColor = tribuColors[id_Tribu] || '#000000'; // Color por defecto si id_Tribu no se encuentra
@@ -40,7 +40,9 @@ export const CardYoKai =  ({nombre, nombreJapones, iconHeart, imagenYoKai, iconT
                 <Text style={styles.textNombre}>{nombreJapones}</Text>
             </View>
             <View style={styles.containerCorazon}>
-                <Image source={iconHeart}></Image>
+                <TouchableOpacity onPress={onPressHeart}>
+                    <Image source={iconHeart} style={{ width: 24, height: 24 }} />
+                </TouchableOpacity>
             </View>
             <View style={styles.containerImagenYoKai}>
                 <Image

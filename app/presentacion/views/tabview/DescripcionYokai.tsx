@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, Image} from "react-native";
+import {View, Text, StyleSheet, Image, ScrollView} from "react-native";
 import {AppFonts} from "../../themes/AppTheme";
 
 interface Props{
@@ -13,42 +13,49 @@ interface Props{
 //{descripcion, habilidad, comidaYK1, comidaYK2, comidaYK3, medalla}: Props
 const DescripcionYokai = () => {
     return(
-        <View style={styles.container}>
-            <Text style={{paddingVertical: 5, fontSize: 15,}}></Text>
-            <View style={styles.containerConjunto}>
-                <Text style={styles.text}>Comida favorita</Text>
-                <View style={styles.containerRow}>
-                    <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch</Text>
-                    <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 2</Text>
-                    <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 3</Text>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+            <View style={styles.container}>
+                <Text style={{ paddingVertical: 5, fontSize: 15 }}></Text>
+                <View style={styles.containerConjunto}>
+                    <Text style={styles.text}>Comida favorita</Text>
+                    <View style={styles.containerRow}>
+                        <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch</Text>
+                        <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 2</Text>
+                        <Text style={[styles.textRow, styles.boldText]}>Yo-kai Watch 3</Text>
+                    </View>
+                    <View style={styles.containerRow}>
+                        <Text style={styles.textRow}>Productos cocidos</Text>
+                        <Text style={styles.textRow}>Productos cocidos</Text>
+                        <Text style={styles.textRow}>Productos cocidos</Text>
+                    </View>
                 </View>
-                <View style={styles.containerRow}>
-                    <Text style={styles.textRow}>Productos cocidos</Text>
-                    <Text style={styles.textRow}>Productos cocidos</Text>
-                    <Text style={styles.textRow}>Productos cocidos</Text>
+                <View style={styles.containerConjunto}>
+                    <View style={styles.containerRow}>
+                        <Text style={[styles.textRow, styles.boldText]}>Habilidad</Text>
+                        <Text style={[styles.textRow, styles.boldText]}>Medalla</Text>
+                    </View>
+                    <View style={styles.containerRow}>
+                        <Text style={styles.textRow2}>Adrenalina</Text>
+                        <Image source={require("../../../../assets/medallajibanyan.png")} style={styles.medalla} />
+                    </View>
                 </View>
             </View>
-            <View style={styles.containerConjunto}>
-               <View style={styles.containerRow}>
-                   <Text style={[styles.textRow, styles.boldText]}>Habilidad</Text>
-                   <Text style={[styles.textRow, styles.boldText]}>Medalla</Text>
-               </View>
-                <View style={styles.containerRow}>
-                    <Text style={styles.textRow2}>Adrenalina</Text>
-                    <Image source={require("../../../../assets/medallajibanyan.png")} style={styles.medalla}/>
-                </View>
-            </View>
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
+    scrollContainer: {
+        flexGrow: 1,
+    },
     container:{
         width: '100%',
+        height: '100%',
+        flex:1,
         justifyContent: "center",
         alignItems: "center",
-        paddingVertical:20,
-        paddingHorizontal: 20
+        paddingVertical:10,
+        paddingHorizontal: 10
     },
     containerConjunto: {
         width: "100%",

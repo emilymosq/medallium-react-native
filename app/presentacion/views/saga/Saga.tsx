@@ -18,20 +18,13 @@ const Saga = () => {
     return (
         <View style={styles.container}>
             <View style={styles.topSection}>
-                <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image source={require("../../../../assets/back.png")} style={styles.icon} />
                 </TouchableOpacity>
-                <TextPrincipales text={"Saga"} />
+                <View style={styles.containerText}>
+                    <Text style={styles.textCentrado}>Saga</Text>
+                </View>
             </View>
-
-            {/*<ScrollView style={styles.containerCardSaga}>*/}
-            {/*    <CardSaga nombre={"Yo-kai Watch"}*/}
-            {/*               descripcion={"Yo-Kai Watch es el primer juego de la saga de categoria de juego de rol en el que los jugadores capturan y coleccionan criaturas llamadas Yo-kai. " +*/}
-            {/*                   "Usando un reloj especial, los jugadores luchan y resuelven problemas causados por estos seres invisibles, mientras avanzan en una historia con batallas por turnos. " +*/}
-            {/*                   "El juego mezcla exploración, colección y combate"}*/}
-            {/*               />*/}
-            {/*</ScrollView>*/}
-
             <View>
                 <TouchableOpacity onPress={() => setModalVisible1(true)}>
                     <Image source={require("../../../../assets/Yo-kai_Watch_Saga1.png")}

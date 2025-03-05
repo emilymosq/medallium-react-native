@@ -10,36 +10,36 @@ import { AppFonts } from '../../themes/AppTheme';
 import YokaiViewModel from './ViewModel';
 import {DetallesYokaiInterface} from '../../../domain/entities/Yokai';
 import RenderYokai from "./ItemYokai";
+import {DrawerNavigationProp} from "@react-navigation/drawer";
+
+//Define la navegacion en un DrawerNavigator, asi se accede a metodos del mismo.
+type HomeScreenNavigationProp = DrawerNavigationProp<RootStackParamlist, 'DrawerNavigator'>;
 
 function Home() {
     const { height } = useWindowDimensions();
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamlist>>();
+    const navigation = useNavigation<HomeScreenNavigationProp>();
     const { yokais, getYokais } = YokaiViewModel();
 
     useEffect(() => {
         getYokais();
     }, []);
 
-    // Accede de manera segura a id_detallesYokai, convierte a cadena o devuelve una cadena vacía si está indefinido
-    //const keyExtractor = (item: DetallesYokaiInterface) => item?.id_detallesYokai?.toString() || '';
-
     return (
         <View style={styles.container}>
             <View style={styles.navbar}>
-                <View style={styles.navbarNombre}>
-                    <Image source={require('../../../../assets/logo.png')} style={styles.imagen} />
-                    <Text style={{
-                        fontSize: 20,
-                        fontWeight: 'bold',
-                        color: '#000',
-                        marginLeft: 10,
-                    }}>Medallium</Text>
+                <View style={styles.navbarLeft}>
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                        <Image source={require('../../../../assets/menu.png')} style={styles.list} />
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('Profile');
-                }}>
-                    <Image style={styles.imagen} source={{ uri: 'https://i.postimg.cc/yx0JFLjV/Whats-App-Image-2025-02-11-at-10-19-53.jpg' }} />
-                </TouchableOpacity>
+                <View style={styles.navbarCenter}>
+                    <Image source={require("../../../../assets/logo2.png")} style={styles.logo} />
+                </View>
+                <View style={styles.navbarRight}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                        <Image style={styles.imagen} source={{ uri: 'https://i.postimg.cc/yx0JFLjV/Whats-App-Image-2025-02-11-at-10-19-53.jpg' }} />
+                    </TouchableOpacity>
+                </View>
             </View>
             <Filtro />
             <View style={styles.containerBotones}>
