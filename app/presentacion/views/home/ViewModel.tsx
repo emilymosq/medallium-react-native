@@ -16,15 +16,6 @@ const YokaiViewModel = () => {
         }
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            await getYokais();
-            setLoading(false);
-        };
-
-        fetchData();
-    },[]);
-
     const toggleFavorite = (id_Yokai: number) => {
         setFavorites((prevFavorites) => ({
             ...prevFavorites,
