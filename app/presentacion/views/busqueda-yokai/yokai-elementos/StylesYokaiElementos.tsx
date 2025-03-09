@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {AppColors, AppFonts} from "../../themes/AppTheme";
+import {AppColors, AppFonts} from "../../../themes/AppTheme";
 
 export const styles = StyleSheet.create({
     container: {
@@ -18,12 +18,12 @@ export const styles = StyleSheet.create({
         width: 23,
         height: 23,
     },
-    containerCardElementos:{
+    containerCardTribu:{
         width: "100%",
         maxHeight: "90%"
     },
     containerText: {
-        flex: 1,
+        flex:1,
         justifyContent: "center",
         alignItems: "center",
     },
@@ -31,5 +31,8 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: AppFonts.bold
     },
-
-})
+    containerCardRangos:{
+        width: "100%",
+        maxHeight: "90%"
+    }
+});
