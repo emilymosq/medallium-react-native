@@ -14,10 +14,6 @@ export const YokaiTribuViewModel = (idTribu: number) => {
         }
     };
 
-    useEffect(() => {
-        getYokais(idTribu);
-    }, []);
-
     return {
         yokais,
         getYokais,

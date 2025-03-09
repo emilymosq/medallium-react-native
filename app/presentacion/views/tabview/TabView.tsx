@@ -46,7 +46,7 @@ const ThirdRoute = () => (
 );
 
 export default function TabViewInfo({yokai}: Props) {
-    const { datosCombate, loading } = DatosCombateViewModel(yokai.yokai.id_Yokai);
+    const { datosCombate } = DatosCombateViewModel(yokai.yokai.id_Yokai);
     const layout = useWindowDimensions();
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([

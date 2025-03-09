@@ -14,10 +14,6 @@ export const YokaiRangosViewModel = (idRango: number) => {
         }
     };
 
-    useEffect(() => {
-        getYokais(idRango);
-    }, []);
-
     return {
         yokais,
         getYokais,

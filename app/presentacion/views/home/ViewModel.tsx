@@ -4,7 +4,6 @@ import { YokaiUseCase } from "../../../domain/useCases/yokai/YokaiUseCase";
 
 const YokaiViewModel = () => {
     const [yokais, setYokais] = useState<DetallesYokaiInterface[]>([]);
-    const [loading, setLoading] = useState(true);
     const [favorites, setFavorites] = useState<Record<string, boolean>>({});
 
     const getYokais = async () => {

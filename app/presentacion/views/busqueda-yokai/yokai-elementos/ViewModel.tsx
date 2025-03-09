@@ -14,10 +14,6 @@ export const YokaiElementosViewModel = (idElemento: number) => {
         }
     };
 
-    useEffect(() => {
-        getYokais(idElemento);
-    }, []);
-
     return {
         yokais,
         getYokais,

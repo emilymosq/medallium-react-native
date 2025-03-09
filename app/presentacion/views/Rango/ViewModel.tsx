@@ -14,15 +14,6 @@ export const RangosViewModel = () => {
         }
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            await getRangos();
-        };
-
-        fetchData();
-    },[]);
-
-
     return {
         rango,
         getRangos,
